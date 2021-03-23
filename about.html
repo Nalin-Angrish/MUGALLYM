@@ -1,166 +1,196 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>Mugallym</title>
-<link rel="icon" href="logo/logo.ico" type="image/x-icon"/>
-<link rel="shortcut icon" href="logo/logo.ico" type="image/x-icon"/>
-<style>
-button.yza {
-  background-color: blue; /* Green */
-  color: white;
-  text-align: center;
-  position:absolute;
-  left:91%;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  font-face:times new roman;
-}
-button.yzadal {
-  background-color: blue; /* Green */
-  color: white;
-  text-align: center;
-  position:absolute;
-  left:45%;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  font-face:times new roman;
-}
-::-webkit-scrollbar {
-		width: 12px;
-	}
-	::-webkit-scrollbar-track {
-		background-color:white;
-		box-shadow: inset 0 0 1px grey; 
-		border-radius:;
-	}
-	::-webkit-scrollbar-thumb {
-		background: brown;
-		border-radius: 20px;
-	}
-	::-webkit-scrollbar-thumb:hover {
-		background: #7a1f1f; 
-	}
 
-	#section2{
-		top:5%;
-		left:0;
-		height:80%;
-		width: 100%;
-		opacity:1;
-		position:absolute;
-		z-index:-1;
-		opacity:0.91;
-	}
-	#text{
-		font-color:white;
-		font-face:times new roman;
-		left:97%;
-		position:absolute;
-	}
-	#about{
-		left:91%;
-		position:absolute;
-		font-face:times new roman;
-		font-color:white;
-	}
-	#back{
-		top:0;
-		left:0;
-		z-index:-5;
-		width:100%;
-		height:100%;
-		background-image:url("background/leather.jpg");
-		position:absolute;
-	}
-	h1{
-		-webkit-text-stroke: 0px white;
-	}
-	.h1{
-	background-color:darkblue;
-	}
-	#logo{
-		width:200px;
-		height:200px;
-		position:absolute;
-		top:35%;
-		left:0;
-	}
-	#list{
-		background-color:white;
-		position:absolute;
-		top:100px;
-		left:350px;
-		width:900px;
-		height:500px;
-		opacity:0.8;
-	}
-	#list1{
-		position:absolute;
-		top:150px;
-		left:400px;
-		width:800px;
-		height:425px;
-		overflow:auto;
-	}
-	button.accordion {
-		background-color:white;
-		opacity:0.7;
-		cursor:pointer;
-		padding:18px;
-		width:750px;
-		border:none;
-		text-align:left;
-		outline:none;
-		font-size:20px;
-		transition:0.4s;
-		overflow:none;
-		z-index:4;
-		left:100px;
-	}
-	button.accordion.active, button.accordion:hover {
-		background-color: #ddd;
-	}
-	button.accordion:after{
-		content:"+";
-		font-size:20px;
-		color:blaсk;
-		float:right;
-		margin-left:0px;
-	}
-	button.accordion.active:after{
-		content:"-";
-	}
-	div.panel{
-		padding: 0 18px;
-		max-height:0;
-		overflow:hidden;
-		transition: 0.6s ease-in-out;
-		opacity:0;
-		left:250px;
-	}
-	div.panel.show{
-		opacity:1;
-		max-height:5000px;
-		left:250px;
-	}
-</style>
+<head>
+    <meta charset="utf-8">
+    <title>Mugallym</title>
+    <link rel="icon" href="logo/logo.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="logo/logo.ico" type="image/x-icon" />
+    <style>
+        button.yza {
+            background-color: blue;
+            /* Green */
+            color: white;
+            text-align: center;
+            position: absolute;
+            left: 91%;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            font-face: times new roman;
+        }
+        
+        button.yzadal {
+            background-color: blue;
+            /* Green */
+            color: white;
+            text-align: center;
+            position: absolute;
+            left: 45%;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            font-face: times new roman;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background-color: white;
+            box-shadow: inset 0 0 1px grey;
+            border-radius: ;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: brown;
+            border-radius: 20px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #7a1f1f;
+        }
+        
+        #section2 {
+            top: 5%;
+            left: 0;
+            height: 80%;
+            width: 100%;
+            opacity: 1;
+            position: absolute;
+            z-index: -1;
+            opacity: 0.91;
+        }
+        
+        #text {
+            font-color: white;
+            font-face: times new roman;
+            left: 97%;
+            position: absolute;
+        }
+        
+        #about {
+            left: 91%;
+            position: absolute;
+            font-face: times new roman;
+            font-color: white;
+        }
+        
+        #back {
+            top: 0;
+            left: 0;
+            z-index: -5;
+            width: 100%;
+            height: 100%;
+            background-image: url("background/leather.jpg");
+            position: absolute;
+        }
+        
+        h1 {
+            -webkit-text-stroke: 0px white;
+        }
+        
+        .h1 {
+            background-color: darkblue;
+        }
+        
+        #logo {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 35%;
+            left: 0;
+        }
+        
+        #list {
+            background-color: white;
+            position: absolute;
+            top: 100px;
+            left: 350px;
+            width: 900px;
+            height: 500px;
+            opacity: 0.8;
+        }
+        
+        #list1 {
+            position: absolute;
+            top: 150px;
+            left: 400px;
+            width: 800px;
+            height: 425px;
+            overflow: auto;
+        }
+        
+        button.accordion {
+            background-color: white;
+            opacity: 0.7;
+            cursor: pointer;
+            padding: 18px;
+            width: 750px;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 20px;
+            transition: 0.4s;
+            overflow: none;
+            z-index: 4;
+            left: 100px;
+        }
+        
+        button.accordion.active,
+        button.accordion:hover {
+            background-color: #ddd;
+        }
+        
+        button.accordion:after {
+            content: "+";
+            font-size: 20px;
+            color: blaсk;
+            float: right;
+            margin-left: 0px;
+        }
+        
+        button.accordion.active:after {
+            content: "-";
+        }
+        
+        div.panel {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: 0.6s ease-in-out;
+            opacity: 0;
+            left: 250px;
+        }
+        
+        div.panel.show {
+            opacity: 1;
+            max-height: 5000px;
+            left: 250px;
+        }
+    </style>
 </head>
+
 <body onload="startTime()">
 
-<div id="back"></div>
+    <div id="back"></div>
 
-<a href="main.html"><div id="logo"><img src="logo/logo2.png" height=200px; width=200px;></div></a>
+    <a href="index.html">
+        <div id="logo"><img src="logo/logo2.png" height=200px; width=200px;></div>
+    </a>
 
 
-<div id="section2"><img src="background/main background.png" height=645px; width=100%;></div>
-<div id="list"></div>
-<div id="list1">
+    <div id="section2"><img src="background/main background.png" height=645px; width=100%;></div>
+    <div id="list"></div>
+    <div id="list1">
 
-<center><h6><font color="blue" face="Ar Berkley" size="15px">Biz barada</font></h6></center>
-<font size="5px"><b><pre><p align="center">
+        <center>
+            <h6>
+                <font color="blue" face="Ar Berkley" size="15px">Biz barada</font>
+            </h6>
+        </center>
+        <font size="5px"><b><pre><p align="center">
 Bu web-sahypa t&uuml;rkmen dili we edebi&yacute;atyny, i&ncaron;lis we nemes 
 dillerini &ouml;wrenm&auml;ne h&ouml;wes bildir&yacute;&auml;nlere we &yacute;urdumyzdaky 
 we doganlyk &yacute;urtlardaky mugallymlara we okuw&ccedil;y, talyplara uly 
@@ -173,20 +203,20 @@ Batyr Hoja&yacute;ewa we informatika mugallymy Nury Kemalowa
 uly minetdarlygymyzy bildir&yacute;&auml;ris!
 <br><br><br>
 </p></pre></b></font>
-<button class="accordion"><font face="monospace">1) &Yacute;&uuml;klenen prezentasi&yacute;alary&ncaron; paroluny n&auml;dip bilmeli?</font></button>
-<div class="panel">
-<font size="5px"><b><pre><p align="center">
+        <button class="accordion"><font face="monospace">1) &Yacute;&uuml;klenen prezentasi&yacute;alary&ncaron; paroluny n&auml;dip bilmeli?</font></button>
+        <div class="panel">
+            <font size="5px"><b><pre><p align="center">
 Prezentasi&yacute;any &yacute;&uuml;kl&auml;p alandan so&ncaron;ra
 onu&ncaron; belgisini berlen telefon belg&auml; (+993 61 191440) SMS 
 edip ugratmaly we so&ncaron; &yacute;azlan m&ouml;&ccedil;berind&auml;ki pul t&ouml;legini 
 telefon belg&auml; (+993 61191440) ge&ccedil;irmlei we prezentasi&yacute;any&ncaron; paroly 
 telefonu&ncaron;yza SMS bolup barar. 
 </p></pre></b></font>
-</div>
-<br>
-<button class="accordion"><font face="monospace">2) Fa&yacute;ly n&auml;dip &yacute;&uuml;klemeli?</font></button>
-<div class="panel">
-<font size="5px"><b><pre><p align="center">
+        </div>
+        <br>
+        <button class="accordion"><font face="monospace">2) Fa&yacute;ly n&auml;dip &yacute;&uuml;klemeli?</font></button>
+        <div class="panel">
+            <font size="5px"><b><pre><p align="center">
 Fa&yacute;ly &yacute;&uuml;klemek &uuml;&ccedil;in:
 1) "&Yacute;&uuml;kle" belgisini&ncaron; a&scedil;agyndaky belgilerden &ouml;z&uuml;&ncaron;ize geregini basy&ncaron;:
 <img src="background/5.jpg" height="300px">
@@ -194,11 +224,11 @@ Fa&yacute;ly &yacute;&uuml;klemek &uuml;&ccedil;in:
 2) Ikinji sahypada a&ccedil;ylan penjir&auml;ni&ncaron; &yacute;okarsyndaky &scedil;e&yacute;le belg&auml; basmaly:
 <img src="background/6.jpg" height="340px">
 </p></pre></b></font>
-</div>
-<br>
-<button class="accordion"><font face="monospace">3) &Yacute;&uuml;klenen prezentasi&yacute;alary&ncaron; paroluny n&auml;dip a&yacute;yrmaly?</font></button>
-<div class="panel">
-<font size="5px"><b><pre><p align="center">
+        </div>
+        <br>
+        <button class="accordion"><font face="monospace">3) &Yacute;&uuml;klenen prezentasi&yacute;alary&ncaron; paroluny n&auml;dip a&yacute;yrmaly?</font></button>
+        <div class="panel">
+            <font size="5px"><b><pre><p align="center">
 Prezentasi&yacute;any&ncaron; paroluny a&yacute;yrmak &uuml;&ccedil;in:
 1) "File" ("Файл") girmeli:
 <img src="background/1.jpg" height="300px">
@@ -213,9 +243,9 @@ Prezentasi&yacute;any&ncaron; paroluny a&yacute;yrmak &uuml;&ccedil;in:
 <img src="background/4.jpg" height="340px">
 
 </p></pre></b></font>
-</div>
+        </div>
 
-<font size="5px"><b><pre><p align="center">
+        <font size="5px"><b><pre><p align="center">
 
 
 Islendik dersden prezentasiýalar, islendik görnüşdäki
@@ -231,7 +261,7 @@ bar bolsa bize ýüz tutup bilersiňiz!
 
 </p></pre></b></font>
 
-<font size="6px"><b><pre><p align="center">
+        <font size="6px"><b><pre><p align="center">
 
 
 <center><center><font>Habarla&scedil;mak &uuml;&ccedil;in</font></center>
@@ -243,53 +273,58 @@ e-salgymyz:habarlash.me@gmail.com;
 <br><br>
 <center><font size="5px">2020</font></center>
 </p></pre></b></font>
-</div>
+    </div>
 
-<button class="yza"; onclick="goBack()"><font face="times new roman">Yza dolanmak</font></button>
+    <button class="yza" ; onclick="goBack()"><font face="times new roman">Yza dolanmak</font></button>
 </body>
 
 <script>
-function goBack() {
-  window.history.back();
-}
-	
-var acc = document
-.getElementsByClassName("accordion");
+    function goBack() {
+        window.history.back();
+    }
 
-var i;
+    var acc = document
+        .getElementsByClassName("accordion");
 
-for (i = 0; i < acc.length; i++) {
-acc[i].onclick = function(){
-this.classList.toggle("active");
-this.nextElementSibling.classList
-.toggle("show");
-}
-}
-	function startTime(){
-	var today = new Date();
-	var h = today.getHours();
-	var m = today.getMinutes();
-	var s = today.getSeconds();
-	m = checkTime(m);
-	s = checkTime(s);
-	document.getElementById('txt').innerHTML =
-	h + ":" + m;
-	var t = setTimeout(startTime, 500);
-	}
-	function checkTime(i) {
-	if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-	return i;
-	}
-	var curday = function(sp){
-	today = new Date();
-	var dd = today.getDate();
-	var mm = today.getMonth()+1; //As January is 0.
-	var yyyy = today.getFullYear();
-	if(dd<10) dd='0'+dd;
-	if(mm<10) mm='0'+mm;
-	return (mm+sp+dd+sp+yyyy);
-	};
-	console.log(curday('/'));
-	console.log(curday('-'));
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].onclick = function() {
+            this.classList.toggle("active");
+            this.nextElementSibling.classList
+                .toggle("show");
+        }
+    }
+
+    function startTime() {
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('txt').innerHTML =
+            h + ":" + m;
+        var t = setTimeout(startTime, 500);
+    }
+
+    function checkTime(i) {
+        if (i < 10) {
+            i = "0" + i
+        }; // add zero in front of numbers < 10
+        return i;
+    }
+    var curday = function(sp) {
+        today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1; //As January is 0.
+        var yyyy = today.getFullYear();
+        if (dd < 10) dd = '0' + dd;
+        if (mm < 10) mm = '0' + mm;
+        return (mm + sp + dd + sp + yyyy);
+    };
+    console.log(curday('/'));
+    console.log(curday('-'));
 </script>
+
 </html>

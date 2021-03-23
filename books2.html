@@ -1,238 +1,300 @@
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>Mugallym</title>
-<link rel="icon" href="logo/logo.ico" type="image/x-icon"/>
-<link rel="shortcut icon" href="logo/logo.ico" type="image/x-icon"/>
-<style>
-	a{
-text-decoration:none;
-}
-#bookcase{
-width:400px;
-height:800px;
-position:fixed;
-top:160px;
-left:350px;
-background-image:;
-}
-#bookcase1{
-width:400px;
-height:800px;
-position:fixed;
-top:160px;
-left:350px;
-z-index:1;
-}
-.tooltip{
-position:absolute;
-display:inline-block;
-top:-10;
-}
-.tooltip .tooltiptext{
-visibility:hidden;
-width:120px;
-background-color:white;
-opacity:0.9;
-text-align:center;
-border-radius:6px;
-padding:1px;
-position:absolute;
-z-index:1;
-top:80%;
-left:50%;
-margin-left:-60px;
-}
-.tooltip:hover .tooltiptext {
-visibility: visible;
-}
-.tooltip1{
-display:inline-block;
-}
-.tooltip1 .tooltiptext1{
-visibility:hidden;
-width:120px;
-}
-.tooltip1:hover .tooltiptext1 {
-visibility: visible;
-}
-.bookcont{
-width:120px;
-height:130px;
-background-color:;
-top:28px;
-position:absolute;
-}
-.bookcont2{
-width:120px;
-height:130px;
-background-color:;
-top:172px;
-position:absolute;
-}
-.bookcont3{
-width:120px;
-height:130px;
-background-color:;
-top:316px;
-position:absolute;
-}
-#book1{left:60px;}
-#book2{left:175px;}
-#book3{left:290px;}
-#book4{left:405px;}
-#book5{left:520px;}
-#book6{left:635px;}
-
-#aklist{
-width:141px;
-height:90px;
-position:fixed;
-top:80px;
-left:680px;
-z-index:2;
-}
-#aklist1{
-width:141px;
-height:90px;
-position:fixed;
-top:80px;
-left:680px;
-z-index:3;
-}
-ul.pagination{
-display:inline-block;
-padding:0;
-margin:0;
-}
-ul.pagination li{display: inline;}
-ul.pagination li a{
-color:black;
-float:left;
-padding:2px 4px;
-text-decoration:none;
-border-radius:5px;
-}
-ul.pagination li a.active{
-background-color:#4caf50;
-color:white;
-border-radius:5px;
-}
-ul.pagination li a:hover:not(.active){
-background-color: #ddd;
-}
-	#section2{
-		top:5%;
-		left:0;
-		height:80%;
-		width: 100%;
-		opacity:1;
-		position:absolute;
-		z-index:-1;
-		opacity:0.91;
-	}
-	#text{
-		font-color:white;
-		font-face:times new roman;
-		left:97%;
-		position:absolute;
-		top:7px;
-	}
-	#about{
-		left:91%;
-		position:absolute;
-		font-face:times new roman;
-		font-color:white;
-		top:7px;
-	}
-	#back{
-		top:0;
-		left:0;
-		z-index:-5;
-		width:100%;
-		height:100%;
-		background-image:url("background/leather.jpg");
-		position:absolute;
-	}
-	h1{
-		-webkit-text-stroke: 0px white;
-
-	}
-	.h1{
-	background-color:darkblue;
-	}
-	a:link{
-		text-decoration:none;
-		color:black;
-	}
-	a:visited{
-		text-decoration:none;
-		color:black;
-	}
-	a:hover{
-		color:white;
-	}
-	#home{
-		position:absolute;
-		height:40px;
-		z-index:8;
-		top:1px;
-		left:87%;
-		width:20px;
-	}
-	#champ{
-		position:absolute;
-		height:40px;
-		z-index:8;
-		top:1px;
-		left:84%;
-		width:20px;
-	}
-	#lang{
-		position:absolute;
-		height:40px;
-		z-index:8;
-		top:1px;
-		left:80%;
-		width:20px;
-	}
-	#logo{
-		width:200px;
-		height:200px;
-		position:absolute;
-		top:35%;
-		left:0;
-	}
-		::-webkit-scrollbar {
-		width: 12px;
-	}
-	::-webkit-scrollbar-track {
-		background-color:black;
-		box-shadow: inset 0 0 1px grey; 
-		border-radius:;
-	}
-	::-webkit-scrollbar-thumb {
-		background: brown;
-		border-radius: 20px;
-	}
-	::-webkit-scrollbar-thumb:hover {
-		background: #7a1f1f; 
-	}
-
-</style>
+    <meta charset="utf-8">
+    <title>Mugallym</title>
+    <link rel="icon" href="logo/logo.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="logo/logo.ico" type="image/x-icon" />
+    <style>
+        a {
+            text-decoration: none;
+        }
+        
+        #bookcase {
+            width: 400px;
+            height: 800px;
+            position: fixed;
+            top: 160px;
+            left: 350px;
+            background-image: ;
+        }
+        
+        #bookcase1 {
+            width: 400px;
+            height: 800px;
+            position: fixed;
+            top: 160px;
+            left: 350px;
+            z-index: 1;
+        }
+        
+        .tooltip {
+            position: absolute;
+            display: inline-block;
+            top: -10;
+        }
+        
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: white;
+            opacity: 0.9;
+            text-align: center;
+            border-radius: 6px;
+            padding: 1px;
+            position: absolute;
+            z-index: 1;
+            top: 80%;
+            left: 50%;
+            margin-left: -60px;
+        }
+        
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
+        
+        .tooltip1 {
+            display: inline-block;
+        }
+        
+        .tooltip1 .tooltiptext1 {
+            visibility: hidden;
+            width: 120px;
+        }
+        
+        .tooltip1:hover .tooltiptext1 {
+            visibility: visible;
+        }
+        
+        .bookcont {
+            width: 120px;
+            height: 130px;
+            background-color: ;
+            top: 28px;
+            position: absolute;
+        }
+        
+        .bookcont2 {
+            width: 120px;
+            height: 130px;
+            background-color: ;
+            top: 172px;
+            position: absolute;
+        }
+        
+        .bookcont3 {
+            width: 120px;
+            height: 130px;
+            background-color: ;
+            top: 316px;
+            position: absolute;
+        }
+        
+        #book1 {
+            left: 60px;
+        }
+        
+        #book2 {
+            left: 175px;
+        }
+        
+        #book3 {
+            left: 290px;
+        }
+        
+        #book4 {
+            left: 405px;
+        }
+        
+        #book5 {
+            left: 520px;
+        }
+        
+        #book6 {
+            left: 635px;
+        }
+        
+        #aklist {
+            width: 141px;
+            height: 90px;
+            position: fixed;
+            top: 80px;
+            left: 680px;
+            z-index: 2;
+        }
+        
+        #aklist1 {
+            width: 141px;
+            height: 90px;
+            position: fixed;
+            top: 80px;
+            left: 680px;
+            z-index: 3;
+        }
+        
+        ul.pagination {
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+        }
+        
+        ul.pagination li {
+            display: inline;
+        }
+        
+        ul.pagination li a {
+            color: black;
+            float: left;
+            padding: 2px 4px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        
+        ul.pagination li a.active {
+            background-color: #4caf50;
+            color: white;
+            border-radius: 5px;
+        }
+        
+        ul.pagination li a:hover:not(.active) {
+            background-color: #ddd;
+        }
+        
+        #section2 {
+            top: 5%;
+            left: 0;
+            height: 80%;
+            width: 100%;
+            opacity: 1;
+            position: absolute;
+            z-index: -1;
+            opacity: 0.91;
+        }
+        
+        #text {
+            font-color: white;
+            font-face: times new roman;
+            left: 97%;
+            position: absolute;
+            top: 7px;
+        }
+        
+        #about {
+            left: 91%;
+            position: absolute;
+            font-face: times new roman;
+            font-color: white;
+            top: 7px;
+        }
+        
+        #back {
+            top: 0;
+            left: 0;
+            z-index: -5;
+            width: 100%;
+            height: 100%;
+            background-image: url("background/leather.jpg");
+            position: absolute;
+        }
+        
+        h1 {
+            -webkit-text-stroke: 0px white;
+        }
+        
+        .h1 {
+            background-color: darkblue;
+        }
+        
+        a:link {
+            text-decoration: none;
+            color: black;
+        }
+        
+        a:visited {
+            text-decoration: none;
+            color: black;
+        }
+        
+        a:hover {
+            color: white;
+        }
+        
+        #home {
+            position: absolute;
+            height: 40px;
+            z-index: 8;
+            top: 1px;
+            left: 87%;
+            width: 20px;
+        }
+        
+        #champ {
+            position: absolute;
+            height: 40px;
+            z-index: 8;
+            top: 1px;
+            left: 84%;
+            width: 20px;
+        }
+        
+        #lang {
+            position: absolute;
+            height: 40px;
+            z-index: 8;
+            top: 1px;
+            left: 80%;
+            width: 20px;
+        }
+        
+        #logo {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 35%;
+            left: 0;
+        }
+        
+         ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+         ::-webkit-scrollbar-track {
+            background-color: black;
+            box-shadow: inset 0 0 1px grey;
+            border-radius: ;
+        }
+        
+         ::-webkit-scrollbar-thumb {
+            background: brown;
+            border-radius: 20px;
+        }
+        
+         ::-webkit-scrollbar-thumb:hover {
+            background: #7a1f1f;
+        }
+    </style>
 </head>
+
 <body onload="startTime()">
 
-<div id="back"></div>
+    <div id="back"></div>
 
 
-<a href="main.html"><div id="logo"><img src="logo/logo2.png" height=200px; width=200px;></div></a>
+    <a href="index.html">
+        <div id="logo"><img src="logo/logo2.png" height=200px; width=200px;></div>
+    </a>
 
-<div id="home"><a href="main.html"><img src="logo/home.png"; height=30px; title="Ba&scedil; sahypa"></a></div>
-<div id="lang"><a href="turkmen.html"><img src="logo/language.png"; height=30px; title="Diller";></a></div>
-<div id="champ"><a href="extra.html"><img src="logo/champion.png"; height=30px; title="B&auml;sle&scedil;ikler";></a></div>
+    <div id="home">
+        <a href="index.html"><img src="logo/home.png" ; height=30px; title="Ba&scedil; sahypa"></a>
+    </div>
+    <div id="lang">
+        <a href="turkmen.html"><img src="logo/language.png" ; height=30px; title="Diller" ;></a>
+    </div>
+    <div id="champ">
+        <a href="extra.html"><img src="logo/champion.png" ; height=30px; title="B&auml;sle&scedil;ikler" ;></a>
+    </div>
 
-<h1><strong><div id="about"; class="h1";><a href="about.html"><font color="white"; size="4px";>Biz barada</a></font></div>
+    <h1><strong><div id="about"; class="h1";><a href="about.html"><font color="white"; size="4px";>Biz barada</a></font></div>
 </h1>
 <div id="section2"><img src="background/main background.png" height=645px; width=100%;></div>
 

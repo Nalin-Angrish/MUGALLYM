@@ -1,341 +1,405 @@
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>Mugallym</title>
-<link rel="icon" href="logo/logo.ico" type="image/x-icon"/>
-<link rel="shortcut icon" href="logo/logo.ico" type="image/x-icon"/>
-<style>
-
-	#section2{
-		top:5%;
-		left:0;
-		height:80%;
-		width: 100%;
-		opacity:1;
-		position:absolute;
-		z-index:-1;
-		opacity:0.91;
-	}
-	#text{
-		font-color:white;
-		font-face:times new roman;
-		left:97%;
-		position:absolute;
-	}
-	#about{
-		left:91%;
-		position:absolute;
-		font-face:times new roman;
-		font-color:white;
-	}
-	#back{
-		top:0;
-		left:0;
-		z-index:-5;
-		width:100%;
-		height:100%;
-		background-image:url("background/leather.jpg");
-		position:absolute;
-	}
-	h1{
-		-webkit-text-stroke: 0px white;
-	}
-	.h1{
-	background-color:darkblue;
-	}
-
-	#section10{
-		position:absolute;
-		top:190px;
-		z-index:5;
-		left:240px;;
-		overflow:auto;
-		background-color:white;
-		opacity:1;
-		height:422px;
-		width:1020px;
-
-	}
-	#habarlash{
-		position:absolute;
-		top:612px;
-		z-index:5;
-		left:240px;
-		background-color:brown;
-		color: white;
-		font-size:20px;
-		height:22px;
-		padding:1px;
-		width:570px;
-	}
-	#myInput {
-		background-size:40px;
-		background-repeat: no-repeat;
-		box-sizing: border-box;
-		width:150px;
-		font-size: 16px;
-		padding: 12px 20px 12px 4px;
-		border: 1px solid #ddd;
-		margin-bottom: 12px;
-		z-index:6;
-		position:absolute;
-		height:8px;
-		left:50%;
-		top:4px;
-	}
-	#section12{
-		top:148px;
-		left:240px;
-		position:absolute;
-		width:1020px;
-	}
-	#myTable1 {
-		border-collapse: collapse;
-		width: 100%;
-		border: 0px solid black;
-		font-size: 18px;
-		background-color:brown;
-	}
-	#myTable1 th, #myTable1 td{
-		text-align: LEFT;
-		padding:12px;
-		background-color:brown;
-		color:white;
-	}
-	#myTable{
-		border-collapse: collapse;
-		width: 100%;
-		border: 0px solid black;
-		font-size: 18px;
-	}
-	#myTable th{
-		text-align: middle;
-		padding:10px;
-		color:white;
-		background-color:brown;
-		font-family:times new roman;
-	}
-	#myTable td{
-		text-align: middle;
-		padding:10px;
-		color:black;
-		font-family:times new roman;
-	}
-	#myTable tr{
-		border-bottom: 1px solid black;
-	}
-	#myTable tr.header{
-		background-color:brown;
-	}
-	#myTable tr:hover{
-		background-color:#e1e1d0;
-	}
-	#myTable td.store{
-		text-align:right; 
-		font-size:18px;
-	}
-	#myTable td.cost{
-		text-align:right;
-	}
-	#myTable td.load{
-		text-align:center;
-	}
-	#myTable td.password{
-		text-align:left;
-	}
-
-	#turkmen{
-		top:128px;
-		left:260px;
-		position:absolute;
-		z-index:8;
-		text-align:center;		
-	}
-	#edebiyat{
-		top:128px;
-		left:390px;
-		position:absolute;
-		z-index:8;
-		text-align:center;		
-	}
-	#english{
-		top:128px;
-		left:520px;
-		position:absolute;
-		z-index:8;
-		text-align:center;		
-	}
-	#german{
-		top:128px;
-		left:650px;
-		position:absolute;
-		z-index:8;
-		text-align:center;		
-	}
-	#other{
-		top:128px;
-		left:780px;
-		position:absolute;
-		z-index:8;
-		text-align:center;		
-	}
-	a:link{
-		text-decoration:none;
-		color:black;
-	}
-	a:visited{
-		text-decoration:none;
-		color:black;
-	}
-	a:hover{
-		color:white;
-	}
-	#home{
-		position:absolute;
-		height:40px;
-		z-index:8;
-		top:1px;
-		left:87%;
-		width:20px;
-	}
-	.trapezoid1{
-		border-bottom: 20px solid darkblue;
-		border-left: 20px solid transparent;
-		border-right: 20px solid transparent;
-		height: 0;
-		width: 100px;
-		padding:0px 4px 0px 0px;
-	}
-	.trapezoid{
-		border-bottom: 20px solid lightblue;
-		border-left: 20px solid transparent;
-		border-right: 20px solid transparent;
-		height: 0;
-		width: 100px;
-		padding:0px 0px 0px 0px;
-	}
-	.trapezoid1:hover{
-		border-bottom-color:brown;
-	}
-	.trapezoid:hover{
-		border-bottom-color:brown;
-		font-color:white;
-	}
-	#logo{
-		width:200px;
-		height:200px;
-		position:absolute;
-		top:35%;
-		left:0;
-	}
-	#lang{
-		position:absolute;
-		height:40px;
-		z-index:8;
-		top:1px;
-		left:1000px;
-		width:20px;
-	}
-	#book{
-		position:absolute;
-		height:40px;
-		z-index:8;
-		top:1px;
-		left:80%;
-		width:20px;
-	}
-	#champ{
-		position:absolute;
-		height:40px;
-		z-index:8;
-		top:1px;
-		left:84%;
-		width:20px;
-	}
-	#topback{
-		background-color:darkblue;
-		position:absolute;
-		height:36px;
-		width:527px;
-		top:0;
-		left:990px;
-		z-index:0;
-	}
-	.alert {
-		padding: 20px;
-		background-color: #f44336;
-		color: white;
-		position:absolute;
-		top:3px;
-		left:3px;
-		width:400px;
-		z-index:8;
-		height:60px;
-	}
-	.sales {
-		padding: 20px;
-		background-color: green;
-		color: white;
-		position:absolute;
-		top:3px;
-		left:3px;
-		width:400px;
-		z-index:7;
-		height:60px;
-	}
-	.closebtn {
-		margin-left: 15px;
-		color: white;
-		font-weight: bold;
-		float: right;
-		font-size: 22px;
-		line-height: 20px;
-		cursor: pointer;
-		transition: 0.3s;
-	}
-	.closebtn:hover {
-		color: black;
-	}
-		::-webkit-scrollbar {
-		width: 12px;
-	}
-	::-webkit-scrollbar-track {
-		background-color:white;
-		box-shadow: inset 0 0 1px grey; 
-		border-radius:;
-	}
-	::-webkit-scrollbar-thumb {
-		background: brown;
-		border-radius: 20px;
-	}
-	::-webkit-scrollbar-thumb:hover {
-		background: #7a1f1f; 
-	}
-
-</style>
+    <meta charset="utf-8">
+    <title>Mugallym</title>
+    <link rel="icon" href="logo/logo.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="logo/logo.ico" type="image/x-icon" />
+    <style>
+        #section2 {
+            top: 5%;
+            left: 0;
+            height: 80%;
+            width: 100%;
+            opacity: 1;
+            position: absolute;
+            z-index: -1;
+            opacity: 0.91;
+        }
+        
+        #text {
+            font-color: white;
+            font-face: times new roman;
+            left: 97%;
+            position: absolute;
+        }
+        
+        #about {
+            left: 91%;
+            position: absolute;
+            font-face: times new roman;
+            font-color: white;
+        }
+        
+        #back {
+            top: 0;
+            left: 0;
+            z-index: -5;
+            width: 100%;
+            height: 100%;
+            background-image: url("background/leather.jpg");
+            position: absolute;
+        }
+        
+        h1 {
+            -webkit-text-stroke: 0px white;
+        }
+        
+        .h1 {
+            background-color: darkblue;
+        }
+        
+        #section10 {
+            position: absolute;
+            top: 190px;
+            z-index: 5;
+            left: 240px;
+            ;
+            overflow: auto;
+            background-color: white;
+            opacity: 1;
+            height: 422px;
+            width: 1020px;
+        }
+        
+        #habarlash {
+            position: absolute;
+            top: 612px;
+            z-index: 5;
+            left: 240px;
+            background-color: brown;
+            color: white;
+            font-size: 20px;
+            height: 22px;
+            padding: 1px;
+            width: 570px;
+        }
+        
+        #myInput {
+            background-size: 40px;
+            background-repeat: no-repeat;
+            box-sizing: border-box;
+            width: 150px;
+            font-size: 16px;
+            padding: 12px 20px 12px 4px;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+            z-index: 6;
+            position: absolute;
+            height: 8px;
+            left: 50%;
+            top: 4px;
+        }
+        
+        #section12 {
+            top: 148px;
+            left: 240px;
+            position: absolute;
+            width: 1020px;
+        }
+        
+        #myTable1 {
+            border-collapse: collapse;
+            width: 100%;
+            border: 0px solid black;
+            font-size: 18px;
+            background-color: brown;
+        }
+        
+        #myTable1 th,
+        #myTable1 td {
+            text-align: LEFT;
+            padding: 12px;
+            background-color: brown;
+            color: white;
+        }
+        
+        #myTable {
+            border-collapse: collapse;
+            width: 100%;
+            border: 0px solid black;
+            font-size: 18px;
+        }
+        
+        #myTable th {
+            text-align: middle;
+            padding: 10px;
+            color: white;
+            background-color: brown;
+            font-family: times new roman;
+        }
+        
+        #myTable td {
+            text-align: middle;
+            padding: 10px;
+            color: black;
+            font-family: times new roman;
+        }
+        
+        #myTable tr {
+            border-bottom: 1px solid black;
+        }
+        
+        #myTable tr.header {
+            background-color: brown;
+        }
+        
+        #myTable tr:hover {
+            background-color: #e1e1d0;
+        }
+        
+        #myTable td.store {
+            text-align: right;
+            font-size: 18px;
+        }
+        
+        #myTable td.cost {
+            text-align: right;
+        }
+        
+        #myTable td.load {
+            text-align: center;
+        }
+        
+        #myTable td.password {
+            text-align: left;
+        }
+        
+        #turkmen {
+            top: 128px;
+            left: 260px;
+            position: absolute;
+            z-index: 8;
+            text-align: center;
+        }
+        
+        #edebiyat {
+            top: 128px;
+            left: 390px;
+            position: absolute;
+            z-index: 8;
+            text-align: center;
+        }
+        
+        #english {
+            top: 128px;
+            left: 520px;
+            position: absolute;
+            z-index: 8;
+            text-align: center;
+        }
+        
+        #german {
+            top: 128px;
+            left: 650px;
+            position: absolute;
+            z-index: 8;
+            text-align: center;
+        }
+        
+        #other {
+            top: 128px;
+            left: 780px;
+            position: absolute;
+            z-index: 8;
+            text-align: center;
+        }
+        
+        a:link {
+            text-decoration: none;
+            color: black;
+        }
+        
+        a:visited {
+            text-decoration: none;
+            color: black;
+        }
+        
+        a:hover {
+            color: white;
+        }
+        
+        #home {
+            position: absolute;
+            height: 40px;
+            z-index: 8;
+            top: 1px;
+            left: 87%;
+            width: 20px;
+        }
+        
+        .trapezoid1 {
+            border-bottom: 20px solid darkblue;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            height: 0;
+            width: 100px;
+            padding: 0px 4px 0px 0px;
+        }
+        
+        .trapezoid {
+            border-bottom: 20px solid lightblue;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            height: 0;
+            width: 100px;
+            padding: 0px 0px 0px 0px;
+        }
+        
+        .trapezoid1:hover {
+            border-bottom-color: brown;
+        }
+        
+        .trapezoid:hover {
+            border-bottom-color: brown;
+            font-color: white;
+        }
+        
+        #logo {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 35%;
+            left: 0;
+        }
+        
+        #lang {
+            position: absolute;
+            height: 40px;
+            z-index: 8;
+            top: 1px;
+            left: 1000px;
+            width: 20px;
+        }
+        
+        #book {
+            position: absolute;
+            height: 40px;
+            z-index: 8;
+            top: 1px;
+            left: 80%;
+            width: 20px;
+        }
+        
+        #champ {
+            position: absolute;
+            height: 40px;
+            z-index: 8;
+            top: 1px;
+            left: 84%;
+            width: 20px;
+        }
+        
+        #topback {
+            background-color: darkblue;
+            position: absolute;
+            height: 36px;
+            width: 527px;
+            top: 0;
+            left: 990px;
+            z-index: 0;
+        }
+        
+        .alert {
+            padding: 20px;
+            background-color: #f44336;
+            color: white;
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 400px;
+            z-index: 8;
+            height: 60px;
+        }
+        
+        .sales {
+            padding: 20px;
+            background-color: green;
+            color: white;
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 400px;
+            z-index: 7;
+            height: 60px;
+        }
+        
+        .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .closebtn:hover {
+            color: black;
+        }
+        
+         ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+         ::-webkit-scrollbar-track {
+            background-color: white;
+            box-shadow: inset 0 0 1px grey;
+            border-radius: ;
+        }
+        
+         ::-webkit-scrollbar-thumb {
+            background: brown;
+            border-radius: 20px;
+        }
+        
+         ::-webkit-scrollbar-thumb:hover {
+            background: #7a1f1f;
+        }
+    </style>
 </head>
+
 <body onload="startTime()">
 
-<div class="alert"><span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-	<strong>Salam! Bu web-sahypadaky fa&yacute;llar t&ouml;leglidir! Sizi&ncaron; satyn alan pulu&ncaron;uz yzyna ga&yacute;tarylma&yacute;ar!
+    <div class="alert"><span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <strong>Salam! Bu web-sahypadaky fa&yacute;llar t&ouml;leglidir! Sizi&ncaron; satyn alan pulu&ncaron;uz yzyna ga&yacute;tarylma&yacute;ar!
 	</strong>
-</div>
+    </div>
 
-<div id="back"></div>
-<div id="turkmen" class="trapezoid"><font color="black" size=4px face="times new roman"><a href="turkmen.html">T&uuml;rkmen dili</a></font></div>
-<div id="edebiyat" class="trapezoid"><font color="black" size=4px face="times new roman"><a href="edebiyat.html">Edebi&yacute;at</a></font></div>
-<div id="english" class="trapezoid"><font color="black" size=4px face="times new roman"><a href="english.html">I&ncaron;lis dili</a></font></div>
-<div id="german" class="trapezoid"><font color="black" size=4px face="times new roman"><a href="german.html">Nemes dili</a></font></div>
-<div id="other" class="trapezoid1"><font color="white" size=4px face="times new roman">Be&yacute;lekiler</font></div>
+    <div id="back"></div>
+    <div id="turkmen" class="trapezoid">
+        <font color="black" size=4px face="times new roman"><a href="turkmen.html">T&uuml;rkmen dili</a></font>
+    </div>
+    <div id="edebiyat" class="trapezoid">
+        <font color="black" size=4px face="times new roman"><a href="edebiyat.html">Edebi&yacute;at</a></font>
+    </div>
+    <div id="english" class="trapezoid">
+        <font color="black" size=4px face="times new roman"><a href="english.html">I&ncaron;lis dili</a></font>
+    </div>
+    <div id="german" class="trapezoid">
+        <font color="black" size=4px face="times new roman"><a href="german.html">Nemes dili</a></font>
+    </div>
+    <div id="other" class="trapezoid1">
+        <font color="white" size=4px face="times new roman">Be&yacute;lekiler</font>
+    </div>
 
-<a href="main.html"><div id="logo"><img src="logo/logo2.png" height=200px; width=200px;></div></a>
+    <a href="index.html">
+        <div id="logo"><img src="logo/logo2.png" height=200px; width=200px;></div>
+    </a>
 
-<div id="home"><a href="main.html"><img src="logo/home.png"; height=30px; title="Ba&scedil; sahypa"></a></div>
-<div id="book"><a href="books.html"><img src="logo/book.png"; height=30px; title="Kitaphana"></a></div>
-<div id="champ"><a href="extra.html"><img src="logo/champion.png"; height=30px; title="B&auml;sle&scedil;ikler";></a></div>
+    <div id="home">
+        <a href="index.html"><img src="logo/home.png" ; height=30px; title="Ba&scedil; sahypa"></a>
+    </div>
+    <div id="book">
+        <a href="books.html"><img src="logo/book.png" ; height=30px; title="Kitaphana"></a>
+    </div>
+    <div id="champ">
+        <a href="extra.html"><img src="logo/champion.png" ; height=30px; title="B&auml;sle&scedil;ikler" ;></a>
+    </div>
 
 
-<h1><strong><div id="about"; class="h1";><a href="about.html"><font color="white"; size="4px";>Biz barada</a></about></font></div>
+    <h1><strong><div id="about"; class="h1";><a href="about.html"><font color="white"; size="4px";>Biz barada</a></about></font></div>
 <div id="section2"><img src="background/main background.png" height=645px; width=100%;></div>
 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="G&ouml;zleg...." title="Temany&ncaron; adyny &yacute;az">
 
