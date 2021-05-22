@@ -1,531 +1,932 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tk_TM">
 <head>
-<meta charset="UTF-8">
-<meta charset="UTF-16">
-<meta charset="ISO-8859-1">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover">
-<title>Mugallym</title>
-<link rel="icon" href="img/logocircle.png" type="image/x-icon" />
-<link rel="shortcut icon" href="img/logocircle.png" type="image/x-icon" />
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
- <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.1/css/all.css'><link rel="stylesheet" href="./style.css">
-
+	<!--defaults-->
+		<meta charset="UTF-8">
+		<meta charset="UTF-16">
+		<meta charset="ISO-8859-1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover">
+		<title>Mugallym</title>
+		<link rel="icon" href="i/favicon.png" type="image/x-icon" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.1/css/all.css'><link rel="stylesheet" href="./style.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <style>
-#loader {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 1;
-  width: 120px;
-  height: 120px;
-  margin: -76px 0 0 -76px;
-  border: 16px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 16px solid #3498db;
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
-}
+/*loader*/
+	#loader {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		z-index: 1;
+		width: 120px;
+		height: 120px;
+		margin: -76px 0 0 -76px;
+		border: 16px solid #f2f2f2	;
+		border-radius: 50%;
+		border-top: 16px solid #2E4052;
+		-webkit-animation: spin 2s linear infinite;
+		animation: spin 2s linear infinite;
+	}
+	@-webkit-keyframes spin {
+ 		0% { -webkit-transform: rotate(0deg); }
+  		100% { -webkit-transform: rotate(360deg); }
+	}
+	@keyframes spin {
+  		0% { transform: rotate(0deg); }
+  		100% { transform: rotate(360deg); }
+	}
+/*scroll down*/
+	::-webkit-scrollbar {width: 20px;}
+	::-webkit-scrollbar-track {background: #f2f2f2; box-shadow: inset 0 0 5px grey;}
+	::-webkit-scrollbar-thumb {background: #4a6882;  height:24%;}
+	::-webkit-scrollbar-thumb:hover {background: #2E4052;}
+/*social media buttons */
+	.social-buttons {
+  		display: flex;
+ 		flex-wrap: wrap;
+  		justify-content: center;
+  		margin-top: -10px;
+	}
+	.social-buttons__button {
+  		margin: 0 5px 0;
+	}
+	.social-button {
+  		position: relative;
+  		display: flex;
+  		justify-content: center;
+  		align-items: center;
+  		outline: none;
+  		width: 55px;
+  		height: 55px;
+  		text-decoration: none;
+	}
+	.social-button__inner {
+  		position: relative;
+  		display: flex;
+  		align-items: center;
+  		justify-content: center;
+ 	 	width: calc(100% - 2px);
+  		height: calc(100% - 2px);
+  		border-radius: 100%;
+  		background: #f2f2f2;
+  		text-align: center;
+	}
+	.social-button i,
+	.social-button svg {
+  		position: relative;
+  		z-index: 1;
+ 		transition: 0.3s;
+	}
+	.social-button i {
+ 	font-size: 28px;
+	}
+	.social-button svg {
+  		height: 40%;
+  		width: 40%;
+	}
+	.social-button::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 50%;
+		display: block;
+		width: 0;
+		height: 0;
+		border-radius: 100%;
+		transition: 0.3s;
+	}
+	.social-button:focus, .social-button:hover {
+  		color: #fff;
+	}
+	.social-button:focus::after, .social-button:hover::after {
+  		width: 100%;
+  		height: 100%;
+  		margin-left: -50%;
+	}
+	.social-button--facebook {
+  		color: #2E4052;
+	}
+	.social-button--facebook::after {
+		background: tomato;
+	}
+	.social-button--linkedin {
+	  	color:#2E4052;
+	}
+	.social-button--linkedin::after {
+	  	background: #21759b;
+	}
+	.social-button--snapchat {
+	  	color: #2E4052;
+	}
+	.social-button--snapchat::after {
+	  	background: #0088cc;
+	}
+	@media screen and (max-width: 1330px){
 
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
+	}
+/*tooltip*/
+	.tooltip {
+		position: relative;
+	}
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
+	.tooltip .tooltiptext {
+	  	visibility: hidden;
+	  	width: 120px;
+	  
+	  	color: #f2f2f2;
+	  	font-size: 16px;
+	  	font-family: Century gothic;
+	  	text-align: center;
+	 	border-radius: 6px;
+	  	padding: 10px 0;
+	  	position: absolute;
+	  	z-index: 5;
+	  	top: 110%;
+	  	left: 50%;
+	  	margin-left: -60px;
+	}
+	.tooltip .tooltiptext::after {
+	  	content: "";
+	  	position: absolute;
+	  	top: 100%;
+	  	left: 50%;
+	  	margin-left: -5px;
+	  	border-width: 5px;
+	  	}
 
+	.tooltip:hover .tooltiptext {
+	  	visibility: visible;
+	}
+/*button*/
+	.button {
+  		border-radius: 4px;
+  		background-color: #2E4052;
+  		color: #F2F2F2;
+  		text-align: center;
+  		font-size: 1.3vw;
+  		font-family: Candara;
+  		padding: 9px;
+  		width: 160px;
+  		transition: all 0.5s;
+  		cursor: pointer;
+  		position: absolute;
+  		right:0;
+	}
+	.button span {
+  		cursor: pointer;
+  		display: inline-block;
+  		position: relative;
+  		transition: 0.5s;
+	}
+	.button span:after {
+  		content: '\00bb';
+  		position: absolute;
+  		opacity: 0;
+  		top: 0;
+  		right: -20px;
+  		transition: 0.5s;
+	}
+	.button:hover span {
+  		padding-right: 25px;
+	}
+	.button:hover span:after {
+  		opacity: 1;
+  		right: 0;
+	}
+/*button2*/
+	.button2 {
+  		border-radius: 4px;
+  		background-color: #2E4052;
+  		color: #F2F2F2;
+  		text-align: center;
+  		font-size: 1.3vw;
+  		font-family: Candara;
+  		padding: 9px;
+  		width: 160px;
+  		transition: all 0.5s;
+  		cursor: pointer;
+  		position: absolute;
+  		top:0;
+	}
+	.button2 span {
+  		cursor: pointer;
+  		display: inline-block;
+  		position: relative;
+  		transition: 0.5s;
+	}
+	.button2 span:after {
+  		content: '\00bb';
+  		position: absolute;
+  		opacity: 0;
+  		top: 0;
+  		right: -20px;
+  		transition: 0.5s;
+	}
+	.button2:hover span {
+  		padding-right: 25px;
+	}
+	.button2:hover span:after {
+  		opacity: 1;
+  		right: 0;
+	}
+/*button3*/
+	.button3 {
+  		border-radius: 4px;
+  		border-style: none;
+  		background-color: #2E4052;
+  		color: #F2F2F2;
+  		text-align: center;
+  		font-size: 3vw;
+  		font-family: Century gothic;
+  		padding: 0px;
+  		width:30%;
+  		transition: all 0.5s;
+  		cursor: pointer;
+  		position: absolute;
+  		bottom:0;
+	}
+/*button1*/
+	.button1 {
+  		border-radius: 4px;
+  		background-color: #2E4052;
+  		border: none;
+  		display: inline-block;
+  		color: #F2F2F2;
+  		text-align: right;
+  		font-size: 1vw;
+  		font-family: Candara;
+  		padding: 6px;
+  		width: 130px;
+  		transition: all 0.5s;
+  		cursor: pointer;
+  		}
+	.button1 span {
+  		cursor: pointer;
+  		display: inline-block;
+  		position: relative;
+  		transition: 0.5s;
+	}
+	.button1 span:after {
+  		content: '\00bb';
+  		position: absolute;
+  		opacity: 0;
+  		top: 0;
+  		right: -20px;
+  		transition: 0.5s;
+	}
+	.button1:hover span {
+  		padding-right: 25px;
+	}
+	.button1:hover span:after {
+  		opacity: 1;
+  		right: 0;
+	}	
+/*header*/	
+	#navigation-container{
+		position:fixed;
+		top:0;
+		left:0;
+		z-index:4;
+		width:100%;
+		height:24%;
+		background-color: #f2f2f2;
+		box-shadow: 5px 0px 8px 2px grey;}
+	#navcontent{
+		position:absolute;
+		top:10%;
+		left:5%;
+		width:60%;
+		height:80%;
+		background-color:;}
+	#logo-container{
+		position:absolute;
+		top:0;
+		left:0;
+		width:20%;
+		height:100%;}
+	#name-container{
+		position: absolute;
+		left:25%;
+		top:0;
+		width:80%;
+		height:60%;}
+	.namephone{
+		position:absolute;
+		left:0;
+		top:20%; 
+		height:60%;
+	}
+	#menu{
+		position: absolute;
+		left:25%;
+		top:64%;
+		width:80%;
+		height:40%;
+		}
+	.dersler{
+		display: none;
+	}
+	.topnav a {
+		float: left;
+		color: #2E4052;
+		padding: 10px 10px;
+		text-align: center;
+		text-decoration: none;
+		font-size: 1vw;
+		font-family:candara;
+		font-weight: bold;}
+	.topnav a:not(a.dersler){
+		display: block;
+	}
+	.topnav a:hover {
+		background-color:#2E4052;
+		color: #f2f2f2;}
+	.topnav a.active {
+		background-color:#2E4052;
+		color: #f2f2f2;}
+	.dropdown {
+ 		float: left;
+		overflow: hidden;}
+	.dropdown .dropbtn {
+  		font-size: 18px;
+  		border: none;
+  		outline: none;
+  		color: #2E4052;
+  		padding: 10px 10px;
+  		font-family: candara;
+  		font-weight: bold;
+  		background-color: #f2f2f2;}
+	.navbar a:hover, .dropdown:hover .dropbtn {
+ 		background-color:#2E4052;
+  		color:#f2f2f2;}	
+	.dropdown-content {
+  		display: none;
+  		position: absolute;
+  		background-color: #f2f2f2;
+  		min-width: 160px;
+  		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  		z-index: 1;}
+	.dropdown-content a {
+  		float: none;
+  		color: #2E4052;
+		padding: 12px 16px;
+  		text-decoration: none;
+  		display: block;
+  		text-align: left;}
+	.dropdown-content a:hover {
+  		background-color: #2E4052;
+  		color:#f2f2f2;}
+	.dropdown:hover 
+	.dropdown-content {display: block;}	
+/*main*/
+	.pages{
+		position: absolute;
+		left:0;
+		width: 100%;
+		height:100%;
+	}
+	#contill{
+		position: absolute;
+		top:0%;
+		width:50%;
+		height:76%;
+	}
+	#contillt{
+		position: absolute;
+		top:0%;
+		width:50%;
+		height:76%;
+		background-color:;
+	}
+	.leftcontillts{
+		left:0%;
+	}
+	.rightcontillts{
+		right:0%;
+	}
+	.lefttext{
+		left:10%;
+		background-color:;
+	}
+	.illustration{
+		position: absolute;
+		top:10%;
+		height: 70%;
+		width: 70%;
+		background-color:;
+	}
+	.illright{
+		right: 10%;
+	}
+	.textcont{
+		position: absolute;
+		top:20%;
+		height: 65%;
+		width:70%;
+	}
+	.headtext{
+		position: absolute;
+		top:0;
+		left:0;
+		width: 100%;
+		height:20%;
+		color:#2E4052;
+		font-family:Candara;
+		font-size:2.9vw;
+		font-weight: bold;
+	}
+	.imptext{
+		position:absolute;
+		top:24%;
+		left:10%;
+		width:90%;
+		height:61%;
+		color:#2E4052;
+		font-family:Century Gothic;
+		font-size:1.3vw;
+	}
+	.buttoncont{
+		position: absolute;
+		top:85%;
+		left:0%;
+		width:100%;
+		height:15%;
+		background-color:;
+	}
+	.gutycont{
+		position: absolute;
+		top:10%;
+		left:20%;
+		width:60%;
+		height:40%;
+		background-color:;
+	}
+	.guty{		
+		position: absolute;
+		width: 40%;
+		height: 100%;
+		outline: #2e4052 solid 6px;
+		text-align: center;
+		outline-offset:-6px;
+		box-shadow: inset 0 0 25px grey;
+	}
+	.textgood{
+		font-size:1.8vw;
+		padding-top: 30px;
+		font-weight:bold; 
+		font-family: Century gothic;
+		color:#2E4052;
 
-
-
-.logo{
-width:14%;
-display:block;
-position:absolute;
-z-index:3;
-margin-left:auto;
-margin-right:auto;
-left:43%;
-top:12%;
-box-shadow: 0 0px 0px 0 rgba(0, 0, 0.01) , 10 10px 10px 10 rgba(0, 0, 0, 0.19);
-}
-.topnav{
-background-color:#2E4052;
-overflow: hidden;
-}
-.topnav a {
-float: left;
-display: block;
-color: #f2f2f2;
-text-align: center;
-padding: 14px 16px;
-text-decoration: none;
-font-size: 17px;
-font-family:candara;
-}
-.topnav a:hover {
-background-color: #ddd;
-color: black;
-}
-.topnav a.active {
-background-color:rgb(92,163,180);
-color: white;
-}
-.topnav .icon {
-display: none;
-}
-.yuhuu a{
-float: left;
-color: #f2f2f2;
-text-align: center;
-padding: 14px 16px;
-text-decoration: none;
-font-size: 17px;
-font-family:candara;
-display:none;
-}
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
-.dropdown .dropbtn {
-  font-size: 17px;
-  border: none;
-  outline: none;
-  color: #f2f2f2;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: candara;
-  margin: 0; /* Important for vertical align on mobile phones */
-}
-.navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: #ddd;
-  color:black;
-}
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-/* Add a grey background color to dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-#cont1{
-display:none;
-}
-
-#footer{
-position:absolute;
-background-color:#2E4052;
-height:17%;
-left:0;
-width:100%;
-bottom:0;
-text-align:left;
-}
-#footer1{
-position:absolute;
-height:13%;
-left:0;
-width:29%;
-bottom:0;
-text-align:left;
-padding-bottom:8px;
-padding-left:4%;
-display:block;
-color:#f2f2f2;
-text-decoration: none;
-font-size: 20px;
-font-family:sakkal Majalla;
-}
-#footer2{
-position:absolute;
-height:13%;
-left:33%;
-width:29%;
-bottom:0;
-text-align:center;
-padding-bottom:8px;
-padding-left:4%;
-display:block;
-color:#f2f2f2;
-text-decoration: none;
-font-size: 20px;
-font-family:sakkal Majalla;
-}
-#footer3{
-position:absolute;
-height:13%;
-left:67%;
-width:29%;
-bottom:0;
-text-align:right;
-padding-bottom:8px;
-padding-right:4%;
-display:block;
-color:#f2f2f2;
-text-decoration: none;
-font-size: 20px;
-font-family:sakkal Majalla;
-}
-.gutylar{
-position:absolute;
-background-color:#2E4052;
-text-align:center;
-font-family:candara;
-font-size:20px;
-text-decoration:none;
-width:12%;
-color:#f2f2f2;
-padding-top:12px;
-padding-bottom:12px;
-font-weight:bold;
-}
-.gutylar:hover .overlay {
-  width: 100%;
-}
-
-.text {
-  color: #2E4052;
-  font-size: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  white-space: nowrap;
-}
-.overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color:#f2f2f2;
-  font-weight:bold;
-  overflow: hidden;
-  width: 0;
-  height: 100%;
-  transition: .5s ease;
-}
-#guty1{left:20%;top:56%;}
-#guty2{left:44%;top:56%;}
-#guty3{right:20%;top:56%;}
-#guty4{left:20%;top:66%;}
-#guty5{left:44%;top:66%;}
-#guty6{right:20%;top:66%;}
-
-.social-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: -10px;
-}
-.social-buttons__button {
-  margin: 10px 5px 0;
-}
-
-.social-button {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  outline: none;
-  width: 70px;
-  height: 70px;
-  text-decoration: none;
-}
-.social-button__inner {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: calc(100% - 2px);
-  height: calc(100% - 2px);
-  border-radius: 100%;
-  background: #f2f2f2;
-  text-align: center;
-}
-.social-button i,
-.social-button svg {
-  position: relative;
-  z-index: 1;
-  transition: 0.3s;
-}
-.social-button i {
-  font-size: 28px;
-}
-.social-button svg {
-  height: 40%;
-  width: 40%;
-}
-.social-button::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  display: block;
-  width: 0;
-  height: 0;
-  border-radius: 100%;
-  transition: 0.3s;
-}
-.social-button:focus, .social-button:hover {
-  color: #fff;
-}
-.social-button:focus::after, .social-button:hover::after {
-  width: 100%;
-  height: 100%;
-  margin-left: -50%;
-}
-
-.social-button--facebook {
-  color: #2E4052;
-}
-.social-button--facebook::after {
-  background: tomato;
-}
-.social-button--linkedin {
-  color:#2E4052;
-}
-.social-button--linkedin::after {
-  background: #21759b;
-}
-.social-button--snapchat {
-  color: #2E4052;
-}
-.social-button--snapchat::after {
-  background: #0088cc;
-}
-.Mugallym{
-  font-size:32px;
-}
-@media screen and (max-width: 800px) {
-.topnav a:not(:first-child) {display: none;}
-#content{display:none;}
-.topnav a.icon {
-float: right;
-display: block;
-background-color:#2E4052;
-color:#f2f2f2;
-}
-@media screen and (max-width: 800px) {
-.topnav.responsive {position: relative; z-index:5; background-color:#2E4052; color:white;}
-.dropdown {
-float: left;
-overflow: hidden;
-display:none;
-background-color:green;
-color:#f2f2f2;
-}
-.logo{
-display: block;
-margin-left: auto;
-margin-right: auto;
-top:15%;
-width:30%;
-left:35%;
-position:absolute;
-}
-.topnav.responsive .icon {color:white;
-}
-.topnav.responsive a {
-float: none;
-display: block;
-text-align: left;	
-}
-#cont1{
-top:44%;
-z-index:0;
-position:absolute;
-display:block;
-overflow:hidden;
-width: 100%;
-text-align:center;
-}
-.cont1 a{
-text-decoration:none;
-color:#2E4052;
-font-family:candara;
-font-size:18px;
-}
-.Mugallym{
-font-size:16px;
-}
-.nakyl{
-font-size:14px;
-}
-.mine{
-text-align:center;
-margin-left: auto;
-margin-right: auto;
-}
-.social-button i {
-  font-size: 14px;
-}
-.social-button {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  outline: none;
-  width: 36px;
-  height: 36px;
-  text-decoration: none;
-}
-table {
-  border-collapse: collapse;
-	width:50%;
-}
-th, td {
-  padding: 8px;
-  text-align: center;
-  border-bottom: 1px solid #2E4052;
-}
-}
-
-
+	}
+	.linkgood{
+		position:absolute;
+		top:75%;
+		left:35%;
+		width:50%;
+		height:20%;
+		text-align: center;
+		font-color:#2E4052;
+		font-size: 1.3vw;
+		font-family: Century gothic;
+	}
+	.phonegutycont{
+		display: none;
+	}
+/*footer*/
+	#footer{
+		position: absolute;
+		top:304%;
+		left:0;
+		width:100%;
+		height:24%;
+		background-color: #2E4052;
+		box-shadow: 5px 0px 18px 2px grey;
+		z-index: 4;
+	}
+	#futcont{
+		position: absolute;
+		top:10%;
+		left:5%;
+		height:80%;
+		width:90%;
+		background-color:;
+	}
+	#futlogcont{
+		position: absolute;
+		top:32%;
+		left:0;
+		height:36%;
+		width:30%;
+		color:#f2f2f2;
+		font-family: candara;
+		font-size:2vw;
+		font-weight: bold;
+	}
+	#contact{
+		position: absolute;
+		top:20%;
+		right:0;
+		width:20%;
+		height:60%;
+		background-color: ;
+	}
+	#ltextcont{
+		position: absolute;
+		top:10%;
+		width:15%;
+		height:80%;
+		border-right:2px solid #f2f2f2;
+		text-align: right;
+	}
+/*phonescreens*/
+	@media screen and (max-width: 800px){
+		/*header*/
+			#navcontent{
+				left:0;
+				top:7%;
+				width:100%;
+				background-color:;}
+			#logo-container{
+				top:0%;
+				left:40%;
+				height:40%;
+				background-color: ;
+			}
+			#name-container{
+				position: absolute;
+				left:15%;
+				top:56%;
+				width:70%;
+				height:20%;
+				background-color:;
+			}
+			.namephone{
+				position: absolute;
+				left:5%;
+				top:0;
+				height:100%;
+				width:90%;
+			}
+			#menu{
+				position: absolute;
+				left:5%;
+				top:86%;
+				width:90%;
+				height:20%;
+				background-color: ;
+			}
+			.dropdown{
+				display: none;
+			}
+			.dersler{
+				display:block;
+			}
+			.topnav a {
+				float: left;
+				color: #2E4052;
+				padding: 5px 7px;
+				text-align: center;
+				text-decoration: none;
+				font-size: 3.4vw;
+				font-family:candara;
+				font-weight: bold;}
+			.topnav a:hover {
+				background-color:#2E4052;
+				color: #f2f2f2;}
+			.topnav a.active {
+				background-color:#f2f2f2;
+				color: #2E4052;
+				border-top:solid 1px #2E4052;				
+				border-bottom:solid 1px #2E4052;
+				font-weight: bolder;}
+		/*body*/
+			/*list123*/
+				#contill{
+					width:100%;
+					height:38%;
+					top:0;
+				}
+				.illright{
+					left:15%;
+					background-color:;
+				}
+				.picloc{
+					position: absolute;
+					left:15%;
+				}
+				#contillt{
+					width:100%;
+					left: 0;
+					top:32%;
+					height:38%;
+				}
+				.textcont{
+					position: absolute;
+					top:5%;
+					left:0%;
+					height:90%;
+					width:100%;
+					background-color:;
+				}
+				.headtext{
+					position: absolute;
+					top:0;
+					left:0;
+					width: 100%;
+					height:30%;
+					color:#2E4052;
+					font-family:Candara;
+					font-size:8vw;
+					font-weight: bold;
+					text-align: center;
+				}
+				.imptext{
+					position:absolute;
+					top:20%;
+					left:5%;
+					width:90%;
+					height:60%;
+					color:#2E4052;
+					font-family:Century Gothic;
+					font-size:4vw;
+				}
+				.buttoncont{
+					position: absolute;
+					top:80%;
+					left:5%;
+					width:90%;
+					height:20%;
+				}
+				.button2{
+					right:0;
+					font-size: 4vw;
+				}
+				.button {
+			  		font-size: 4vw;
+				}
+				.gutycont{
+					display: none;
+				}
+				.phonegutycont{
+					display: block;
+					position: absolute;
+					left: 5%;
+					top: 15%;
+					height: 70%;
+					width: 90%;
+					background-color:;
+				}
+				.phoneguty{
+					position: absolute;
+					left: 10%;
+					width: 80%;
+					height: 30%;
+					outline: #2e4052 solid 6px;
+					text-align: center;
+					outline-offset:-9px;
+					background-color: #f2f2f2;
+					box-shadow: inset 0 0 25px grey;
+				}
+				.pos1{
+					top:0;
+				}
+				.pos2{
+					top:35%;
+				}
+				.textgood{
+					font-size: 5vw;
+				}
+		/*footer*/
+				#footer{
+					position: absolute;
+					top:304%;
+					left:0;
+					width:100%;
+					height:24%;
+					background-color: #2E4052;
+					box-shadow: 5px 0px 18px 2px grey;
+					z-index: 4;
+				}
+				#futcont{
+					position: absolute;
+					top:10%;
+					left:5%;
+					height:80%;
+					width:90%;
+					background-color:;
+				}
+				.firstrow{
+					display: none;
+				}
+				#futlogcont{
+					position: absolute;
+					top:0%;
+					left:0;
+					height:36%;
+					width:30%;
+					color:#f2f2f2;
+					font-family: candara;
+					font-size:6vw;
+					font-weight: bold;
+				}
+				#contact{
+					position: absolute;
+					top:40%;
+					right:0;
+					width:70%;
+					height:30%;
+					background-color:;
+					text-align: right;
+				}
+				#aboutme{
+					position: absolute;
+					top:30%;
+					left:0;
+					width:35%;
+					height:60%;
+					background-color:;
+					text-align: left;	
+				}
+				.social-button{
+					height: 40px;
+					width: 40px;
+				}
+				.social-button i {
+					font-size: 20px;
+				}
+				.button3{
+					width: 100px;
+					font-size: 3vw;
+					margin-right: 0;
+				}
+		}
 </style>
 </head>
+<body bgcolor="#f2f2f2" onload="mynewFunction()" style="margin:0;">
+<!-- header-->
+	<div id="loader"></div>
+	<div style="display:none;" id="myDiv">	
+	<div id="navigation-container">
+		<div id="navcontent">
+			<div id="logo-container"><a href="index.html"><img src="i/logo.png" width=100%></a></div>
+			<div id="name-container"><a href="index.html"><img src="i/name.png" class="namephone"></a></div>
+			<div id="menu">
+				<div class="topnav">
+  					<a href="index.html" class="active">Baş sahypa</a>
+  					<a href="interesting.html">Gyzykly</a>
+  					<a href="books.html">Kitaphana</a>
+    				<div class="dropdown" id="myTopnav">
+    					<button class="dropbtn"><a href="lesson.html" style="padding:0;">Dersler</a></button>
+    					<div class="dropdown-content">
+      						<a href="turkmen.html">Türkmen dili</a>
+      						<a href="literature.html">Edebiýat</a>
+      						<a href="english.html">Iňlis dili</a>
+	  						<a href="german.html">Nemes dili</a>
+	  						<a href="other.html">Beýlekiler</a>
+    					</div>
+  					</div>
+  					<a href="lessons.html" class="dersler">Dersler</a>
+  					<a href="competition.html">Bäsleşikler</a>
+				</div>
+			</div>
+		</div>		
+	</div>
+<!-- main-->
+	<div class="pages" style="top:24%;">
+		<div id="contill" style="right: 0;">
+			<div class="illustration illright"><img src="i/1page.png" class="picloc" style="width:70%;">
+			</div></div>
+		<div id="contillt" class="leftcontillts">
+			<div class="textcont lefttext">
+				<div class="headtext">"MUGALLYM" näme?</div>
+				<div class="imptext">
+					&nbsp;&nbsp;&nbsp;&nbsp; "Mugallym" web-sahypasy özünde birnäçe derslerden ybarat, gorkezme sapaklar toplumyny jemleýär we düzümini artdyrmaga dowam edýär.
+					<br><br>
+					&nbsp;&nbsp;&nbsp;&nbsp; Biz-de hatda türkmen dili we edebiýatyna degişli görkezme sapaklary hem tapyp bilersiňiz!
+				</div>
+				<div class="buttoncont">
+					<a href="lessons.html"><button class="button"><span>Dersler</span></button></a>	
+				</div>
+			</div>	
+		</div>
+	</div>
+	<div class="pages" style="top:100%;">
+		<div id="contill">	
+			<div class="illustration illright" style="right:10%;"><img src="i/2page.png" class="picloc" style="width:70%;">
+			</div></div>
+		<div id="contillt" class="rightcontillts">
+			<div class="textcont lefttext">
+				<div class="headtext">Ýene-de bizde</div>
+				<div class="imptext">
+					<br>
+					- birnäçe dillerde, derslerde ýa-da okuwçy toplumlarynda ulanyp boljak, ýörite taýýarlanan elektron görnüşindäki bäsleşikleri tapyp ýükläp bilersiňiz!
+				</div>
+				<div class="buttoncont">
+					<a href="competition.html"><button class="button2"><span>Bäsleşikler</span></button></a>	
+				</div>
+			</div>		
+		</div>
+	</div>
+	<div class="pages" style="top:176%;">
+		<div id="contill" style="right: 0;">
+			<div class="illustration illright"><img src="i/3page.png" class="picloc" style="width:70%;">
+			</div></div>
+		<div id="contillt" class="leftcontillts">
+			<div class="textcont lefttext">
+				<div class="headtext">Kitap - ýakyn dostumyz</div>
+				<div class="imptext">
+					<br>
+					&nbsp;&nbsp;&nbsp;&nbsp; "Mugallym" birnäçe dildäki köp sanly elektron kitaplary web-sahypasynda hem-de sosial ulgamlarda özünde jemleýär! Biziň <a href="https://t.me/yaltakitap" target="_blank" style="text-decoration: none; font-weight: bold; color:#2E4052;">Telegram</a> kanalymyzdan hem özüňize gerekli elektron kitaplary ýükläp alyp bilersiňiz!
+				</div>
+				<div class="buttoncont">
+					<a href="lessons.html"><button class="button"><span>Kitaphana</span></button></a>	
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="pages" style="top:252%; height: 76%">
+		<div class="gutycont" style="z-index: 3;">
+			<div class="guty" style="left:0;">
+				<div class="textgood">	
+					Siziň üçin ýörite <br> taýýarlan <br>makalalarymyz!
+					<a href="interesting.html"><button class="button" style="bottom:20px; right:20px;"><span>Öňe!</span></button></a>
+				</div>
+			</div>
+			<div class="guty" style="right:0;">
+				<div class="textgood">	
+					Biziň kitap <br> klubumuza <br> goşulyň!
+					<a href="https://t.me/tbookworm" target="_blank"><button class="button" style="bottom:20px; right:20px;"><span>Öňe!</span></button></a>
+				</div>
+			</div>
+		</div>
+		<div class="phonegutycont" style="z-index: 3;">
+			<div class="phoneguty pos1">
+				<div class="textgood">	
+					Siziň üçin ýörite taýýarlan makalalarymyz!<br><br>
+					<a href="interesting.html"><button class="button3" style="left: 35%;"><span>>></span></button></a>
+				</div>
+			</div>
+			<div class="phoneguty pos2">
+				<div class="textgood">	
+					Biziň kitap klubumuza goşulyň!<br><br>
+					<a href="https://t.me/tbookworm" target="_blank"><button class="button3" style="left: 35%;"><span>>></span></button></a>
+				</div>
+			</div>
+		</div>
+		<div style="position: absolute; right:8%; bottom:35%; width:50%; height: 60%; z-index: 2;">
+			<img src="i/4page.png" height=100%; style="position: absolute; right: 0">
+		</div>
+	</div>	
+<!-- footer -->
+	<div id="footer">
+		<div id="futcont">
+			<div id="futlogcont"><a href="index.html" style="text-decoration: none; color: #f2f2f2;">MUGALLYM</a></div>
+			<div id="contact">
+				<div class="social-buttons">
+  					<div class="tooltip"><span class="tooltiptext">habarlash.me@gmail.com</span>
+  					<a href="mailto:habarlash.me@gmail.com" target="_blank" class="social-buttons__button social-button social-button--facebook" aria-label="Facebook">
+    				<span class="social-button__inner"><i class="far fa-envelope"></i></span></a></div>
+  					<div class="tooltip"><span class="tooltiptext">"Gyzykly"</span>
+  					<a href="#" target="_blank" class="social-buttons__button social-button social-button--linkedin" aria-label="LinkedIn">
+    				<span class="social-button__inner"><i class="fab fa-wordpress"></i></span></a></div>
+    				<div class="tooltip"><span class="tooltiptext">@yaltakitap</span>
+  					<a href="https://t.me/yaltakitap" target="_blank" class="social-buttons__button social-button social-button--snapchat" aria-label="SnapChat">
+    				<span class="social-button__inner"><i class="fab fa-telegram"></i></span></a></div>
+				</div>
+			</div>
+			<div id="ltextcont" class="firstrow" style="left:25%;">
+					<a href="turkmen.html"><button class="button1"><span>Türkmen dili</span></button></a> &nbsp; &nbsp;<br>
+					<a href="literature.html"><button class="button1"><span>Edebiýat</span></button></a> &nbsp; &nbsp;<br>
+					<a href="german.html"><button class="button1"><span>Nemes dili</span></button></a> &nbsp; &nbsp;<br>
+			</div>			
+			<div id="ltextcont" class="firstrow">
+					<a href="books.html"><button class="button1"><span>Kitaphana</span></button></a> &nbsp; &nbsp;<br>
+					<a href="competition.html"><button class="button1"><span>Bäsleşikler</span></button></a> &nbsp; &nbsp;<br>
+					<a href="lessons.html"><button class="button1"><span>Dersler</span></button></a> &nbsp; &nbsp;<br>
+			</div>
+			<div id="ltextcont" class="firstrow" style="border-style: none;">
+					<a href="about.html"><button class="button1"><span>Biz barada</span></button></a> &nbsp; &nbsp;<br>
+					<a href="about.html"><button class="button1"><span>Goşant goşmak</span></button></a> &nbsp; &nbsp;<br>
+					<a href="about.html"><button class="button1"><span>FAQ</span></button></a> &nbsp; &nbsp;<br>
+			</div>
+			<div id="aboutme">
+					<a href="about.html"><button class="button3" style="position: relative; text-align: left;"><span>Biz barada</span></button></a><br>
+					<a href="about.html"><button class="button3" style="position: relative; text-align: left;"><span>Goşant goşmak</span></button></a><br>
+					<a href="about.html"><button class="button3" style="position: relative; text-align: left;"><span>FAQ</span></button></a>
+			</div>
 
-<body bgcolor="#CDD9BF" onload="mynewFunction()" style="margin:0;">
-<div id="loader"></div>
-
-<div style="display:none;" id="myDiv">
-
-<div id="footer"></div>
-<div id="footer1"><font style="font-family:Candara;" class="Mugallym">MUGALLYM</font><br><font class="nakyl">"Mal paýlasaň dagar, ylym paýlasaň köpeler"<br><b>Paýhas Çeşmesi</b></font></div>
-<div id="footer2"></div>
-<div id="footer3">
-<div class="social-buttons">
-  <a href="mailto:habarlash.me@gmail.com" class="social-buttons__button social-button social-button--facebook" aria-label="Facebook">
-    <span class="social-button__inner">
-     <i class="far fa-envelope"></i>
-    </span>
-  </a>
-  <a href="#" class="social-buttons__button social-button social-button--linkedin" aria-label="LinkedIn">
-    <span class="social-button__inner">
-     <i class="fab fa-wordpress"></i>
-    </span>
-  </a>
-  <a href="https://t.me/yaltakitap" class="social-buttons__button social-button social-button--snapchat" aria-label="SnapChat">
-    <span class="social-button__inner">
-     <i class="fab fa-telegram"></i>
-    </span>
-  </a>
-</div> 
+		</div>
+	</div>
 </div>
-
-<div id="content">
-<a href="turkmen.html"><div id="guty1" class="gutylar">TÜRKMEN DILI<div class="overlay"><div class="text">TÜRKMEN DILI</div></div></div></a>
-<a href="edebiyat.html"><div id="guty2" class="gutylar">EDEBIÝAT<div class="overlay"><div class="text">EDEBIÝAT</div></div></div></a>
-<a href="english.html"><div id="guty3" class="gutylar">IŇLIS DILI<div class="overlay"><div class="text">IŇLIS DILI</div></div></div></a>
-<a href="russian.html"><div id="guty4" class="gutylar">RUS DILI<div class="overlay"><div class="text">RUS DILI</div></div></div></a>
-<a href="german.html"><div id="guty5" class="gutylar">NEMES DILI<div class="overlay"><div class="text">NEMES DILI</div></div></div></a>
-<a href="other.html"><div id="guty6" class="gutylar">BEÝLEKILER<div class="overlay"><div class="text">BEÝLEKILER</div></div></div></a>
-</div>
-
-<div class="topnav" id="myTopnav">
-  <a href="index.html" class="active">Salam!</a>
-  <a href="interesting.html">Gyzykly</a>
-    <div class="dropdown" id="myTopnav">
-    <button class="dropbtn">Dersler</button>
-    <div class="dropdown-content">
-      <a href="turkmen.html">Türkmen dili</a>
-      <a href="literature.html">Edebiýat</a>
-      <a href="english.html">Iňlis dili</a>
-	  <a href="german.html">Nemes dili</a>
-	  <a href="other.html">Beýlekiler</a>
-    </div>
-  </div>
-  <a href="books.html">Kitaphana</a>
-  <a href="competition.html">Bäsleşikler</a>
-  <a href="about.html">Biz Barada</a>
-  
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
-</div>
-<div id="cont1" class="cont1">
-<table class="mine" align="center">
-  <tr><td><a href="turkmen.html"><strong>TÜRKMEN DILI</strong></a></td></tr>
-  <tr><td><a href="literature.html"><strong>EDEBIÝAT</strong></a></td></tr>
-  <tr><td><a href="english.html"><strong>IŇLIS DILI</strong></a></td></tr>
-  <tr><td><a href="german.html"><strong>NEMES DILI</strong></a></td></tr>
-  <tr><td><a href="german.html"><strong>BEÝLEKILER</strong></a></td></tr>
-</table>
-</div>
-
-<a href="index.html"><img src="img/last.png" title="Mugallym" alt="Mugallym" class="logo"></a>
-<div id="round"></div>
-
-</div>
-
 </body>
 <script>
-/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-
-//Get the button:
-mybutton = document.getElementById("myBtn");
-
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
-
-var myVar;
-
-function mynewFunction() {
-  myVar = setTimeout(showPage, 3000);
-}
-
-function showPage() {
-  document.getElementById("loader").style.display = "none";
-  document.getElementById("myDiv").style.display = "block";
-}
+	var myVar;
+	function mynewFunction() {
+  		myVar = setTimeout(showPage, 3000);
+	}
+	function showPage() {
+  		document.getElementById("loader").style.display = "none";
+  		document.getElementById("myDiv").style.display = "block";
+	}
 </script>
 </html>
