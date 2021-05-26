@@ -1,0 +1,1029 @@
+<!doctype html>
+<html lang="tk_TM">
+<head>
+<!--defaults-->
+	<meta charset="UTF-8">
+	<meta charset="UTF-16">
+	<meta charset="ISO-8859-1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover">
+	<title>Mugallym</title>
+	<link rel="icon" href="i/favicon.png" type="image/x-icon" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.1/css/all.css'><link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+/*loader*/
+	#loader{
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		background: #f2f2f2 url('css/loader.gif') no-repeat center;
+		z-index: 999;
+	}
+/*scroll down*/
+	::-webkit-scrollbar {width: 10px;}
+	::-webkit-scrollbar-track {background: #f2f2f2; box-shadow: inset 0 0 5px grey;}
+	::-webkit-scrollbar-thumb {background: #4a6882;  height:24%;}
+	::-webkit-scrollbar-thumb:hover {background: #2E4052;}
+/*social media buttons */
+	.social-buttons {
+  		display: flex;
+ 		flex-wrap: wrap;
+  		justify-content: center;
+  		margin-top: 0px;
+	}
+	.social-buttons__button {
+  		margin: 0 5px 0;
+	}
+	.social-button {
+  		position: relative;
+  		display: flex;
+  		justify-content: center;
+  		align-items: center;
+  		outline: none;
+  		width: 55px;
+  		height: 55px;
+  		text-decoration: none;
+	}
+	.social-button__inner {
+  		position: relative;
+  		display: flex;
+  		align-items: center;
+  		justify-content: center;
+ 	 	width: calc(100% - 2px);
+  		height: calc(100% - 2px);
+  		border-radius: 100%;
+  		background: #f2f2f2;
+  		text-align: center;
+	}
+	.social-button i,
+	.social-button svg {
+  		position: relative;
+  		z-index: 1;
+ 		transition: 0.3s;
+	}
+	.social-button i {
+ 	font-size: 28px;
+	}
+	.social-button svg {
+  		height: 40%;
+  		width: 40%;
+	}
+	.social-button::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 50%;
+		display: block;
+		width: 0;
+		height: 0;
+		border-radius: 100%;
+		transition: 0.3s;
+	}
+	.social-button:focus, .social-button:hover {
+  		color: #fff;
+	}
+	.social-button:focus::after, .social-button:hover::after {
+  		width: 100%;
+  		height: 100%;
+  		margin-left: -50%;
+	}
+	.social-button--facebook {
+  		color: #2E4052;
+	}
+	.social-button--facebook::after {
+		background: tomato;
+	}
+	.social-button--linkedin {
+	  	color:#2E4052;
+	}
+	.social-button--linkedin::after {
+	  	background: #21759b;
+	}
+	.social-button--snapchat {
+	  	color: #2E4052;
+	}
+	.social-button--snapchat::after {
+	  	background: #0088cc;
+	}
+/*buttons*/
+	/*button3*/
+		.button3 {
+	  		border-radius: 4px;
+	  		border-style: none;
+	  		background-color: #2E4052;
+	  		color: #F2F2F2;
+	  		text-align: center;
+	  		font-size: 3vw;
+	  		font-family:'Century Gothic';
+	  		padding: 0px;
+	  		width:30%;
+	  		transition: all 0.5s;
+	  		cursor: pointer;
+	  		position: absolute;
+	  		bottom:0;
+		}
+	/*button1*/
+		.button1 {
+	  		border-radius: 4px;
+	  		background-color: #2E4052;
+	  		border: none;
+	  		display: inline-block;
+	  		color: #F2F2F2;
+	  		text-align: right;
+	  		font-size: 1vw;
+	  		font-family: 'Candara';
+	  		padding: 6px;
+	  		width: 130px;
+	  		transition: all 0.5s;
+	  		cursor: pointer;
+	  		}
+		.button1 span {
+	  		cursor: pointer;
+	  		display: inline-block;
+	  		position: relative;
+	  		transition: 0.5s;
+		}
+		.button1 span:after {
+	  		content: '\00bb';
+	  		position: absolute;
+	  		opacity: 0;
+	  		top: 0;
+	  		right: -20px;
+	  		transition: 0.5s;
+		}
+		.button1:hover span {
+	  		padding-right: 25px;
+		}
+		.button1:hover span:after {
+	  		opacity: 1;
+	  		right: 0;
+		}	
+/*tooltip*/
+	.tooltip {
+		position: relative;
+	}
+
+	.tooltip .tooltiptext {
+	  	visibility: hidden;
+	  	width: 120px;
+	  
+	  	color: #f2f2f2;
+	  	font-size: 16px;
+	  	font-family:'Century Gothic';
+	  	text-align: center;
+	 	border-radius: 6px;
+	  	padding: 10px 0;
+	  	position: absolute;
+	  	z-index: 5;
+	  	top: 110%;
+	  	left: 50%;
+	  	margin-left: -60px;
+	}
+	.tooltip .tooltiptext::after {
+	  	content: "";
+	  	position: absolute;
+	  	top: 100%;
+	  	left: 50%;
+	  	margin-left: -5px;
+	  	border-width: 5px;
+	  	}
+
+	.tooltip:hover .tooltiptext {
+	  	visibility: visible;
+	}
+/*tooltip1*/
+	.tooltip1 {
+  		position: relative;
+  		display: inline-block;
+	}
+	.tooltip1 .tooltiptext1{
+	  	visibility: hidden;
+	  width: 120px;
+	  background-color: #2e4052;
+	  color: #f2f2f2;
+	  text-align: center;
+	  border-radius: 6px;
+	  padding: 5px 0;
+	  font-size:1vw;
+	  font-family:'century gothic';
+	  position: absolute;
+	  z-index: 1;
+	  bottom: 150%;
+	  left: 50%;
+	  margin-left: -60px;
+	}
+	.tooltiptext1 a{
+		color:#f2f2f2;
+	}	
+
+	.tooltip1 .tooltiptext1::after {
+	  content: "";
+	  position: absolute;
+	  top: 100%;
+	  left: 50%;
+	  margin-left: -5px;
+	  border-width: 5px;
+	  border-style: solid;
+	  border-color: black transparent transparent transparent;
+	}
+
+	.tooltip1:hover .tooltiptext1 {
+	  visibility: visible;
+	}
+/*header*/	
+	#navigation-container{
+		position:fixed;
+		top:0;
+		left:0;
+		z-index:4;
+		width:100%;
+		height:10%;
+		background-color: #f2f2f2;
+		box-shadow: 5px 0px 8px 2px grey;}
+	#navcontent{
+		position:absolute;
+		top:10%;
+		left:15%;
+		width:90%;
+		height:100%;
+		}
+	#logo-container{
+		position:absolute;
+		top:10%;
+		left:7%;
+		margin: auto;
+		height:80%;
+		}
+	#menu{
+		position: relative;
+		display: block;
+		float: left;
+		top:0%;
+		padding: 10px;
+		width:60%;
+		margin: auto;
+		}
+	.dersler{
+		display: none;
+	}
+	.topnav a {
+		float: left;
+		color: #2E4052;
+		padding: 10px 10px;
+		text-align: center;
+		text-decoration: none;
+		font-size: 1vw;
+		font-family:'Candara';
+		font-weight: bold;}
+	.topnav a:not(a.dersler){
+		display: block;
+	}
+	.topnav a:hover {
+		background-color:#4a6882;
+		color: #f2f2f2;}
+	.topnav a.active {
+		background-color:#2E4052;
+		color: #f2f2f2;}
+	.dropdown {
+ 		float: left;
+		overflow: hidden;}
+	.dropdown .dropbtn {
+  		font-size: 1vw;
+  		border: none;
+  		outline: none;
+  		color: #2E4052;
+  		padding: 10px 10px;
+  		font-family: 'Candara';
+  		font-weight: bold;
+  		background-color: #f2f2f2;}
+	.navbar a:hover, .dropdown:hover .dropbtn {
+ 		background-color:#4a6882;
+  		color:#f2f2f2;}	
+	.dropdown-content {
+  		display: none;
+  		position: absolute;
+  		background-color: #f2f2f2;
+  		min-width: 160px;
+  		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  		z-index: 1;}
+	.dropdown-content a {
+  		float: none;
+  		color: #2E4052;
+		padding: 12px 16px;
+  		text-decoration: none;
+  		display: block;
+  		text-align: left;}
+	.dropdown-content a:hover {
+  		background-color: #4a6882;
+  		color:#f2f2f2;}
+	.dropdown:hover 
+	.dropdown-content {display: block;}
+/*body*/
+	.container, .container2{
+		position: absolute;
+		right:7%;
+		width:20%;
+		height: auto;
+		text-align: center;
+		border:2px dashed #2E4052;
+		padding:8px;
+	}
+	.container{
+		top:26%;
+	}	
+	.container2{
+		top:48%;
+	}
+	.adbox{
+		font:1.3vw Candara;
+		color:#2E4052;
+		opacity: 1;
+		transition: .5s ease;
+  		backface-visibility: hidden;
+  		display: block;
+  		width: 100%;
+  		height: auto;
+	}
+	.middle {
+	  	transition: .5s ease;
+	  	opacity: 0;
+	  	position: absolute;
+	  	top: 50%;
+	  	left: 50%;
+	  	transform: translate(-50%, -50%);
+	  	-ms-transform: translate(-50%, -50%);
+	  	text-align: center;
+	}
+	.middle a{
+		color: #2E4052;
+		font-size: 4.5vw;
+		text-decoration: none;
+	}
+	.container:hover .adbox {
+  		opacity: 0.2;
+	}
+	.container2:hover .adbox {
+  		opacity: 0.2;
+	}
+	.container:hover .middle {
+  		opacity: 1;
+	}
+	.container2:hover .middle {
+  		opacity: 1;
+	}
+	#contbox{
+		position: absolute;
+		top:20%;
+		left:15%;
+		height:50%;
+		width: 50%;
+	}
+	#tablebox{
+		position: absolute;
+		bottom:5%;
+		left:0;
+		width:100%;
+		height:80%;
+		overflow: auto;
+		border-bottom:1px solid grey;
+		border-top:1px solid grey;
+	}
+	#searchbox{
+		position: absolute; 
+		width: 100%; 
+		top:0%;
+		height: 10%;
+	}
+	#starcost{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		height: 5%;
+		width: 100%;
+		color:#2E4052;
+		padding-top: 4px;
+		font:0.8vw candara;	
+	}
+	/*table*/
+		#myInput {
+		  	width: 50%; /* Full-width */
+		  	font-size: 1.2vw; /* Increase font-size */
+		  	color: #2E4052;
+		  	font-family: 'candara';
+		  	background-color: #f2f2f2;
+		  	border:none;
+		  	border-bottom:solid 2px #2E4052;
+		  	}
+		  #myInput :focus{
+		  	border:none;
+		  	border-top:solid 2px #2e4052;
+		  }
+		#myTable {
+			border-collapse: collapse;
+			width: 100%;
+			border: 1px solid grey;
+			font-size: 1.1vw;
+			font-family: 'Century Gothic';
+		}
+		#myTable a{
+			text-decoration: none;
+			color:#2E4052;
+		}
+		#myTable a:hover{
+			color: #f2f2f2;
+		}
+		#myTable th, #myTable td {
+		  	text-align: left;
+		  	padding: 6px;
+		  	padding-left: 12px;
+		}
+		#myTable tr {
+		 	border-bottom: 1px solid grey;
+			color:#2E4052;
+		}
+		#myTable td{
+			border-left: 1px solid grey;
+		}
+		#myTable tr.header{
+		  	background-color: #2E4052;
+		  	color: #f2f2f2;
+		}
+		#myTable tr:hover{
+			color: #f2f2f2;
+			background-color: #4a6882;
+		}
+		#myTable tr:hover a{
+			color: #f2f2f2;
+		}
+		#myTable td:hover a{
+			color:#f2f2f2;
+		}
+		#myTable .money:hover a{
+			color:gold;
+		}
+		#myTable .money:hover{
+			color:gold;
+		}
+		#myTable tr.header:hover{
+			background-color: #2E4052;
+		}
+/*footer*/
+	#footer{
+		position: absolute;
+		bottom: 0;
+		left:0;
+		width:100%;
+		height:24%;
+		background-color: #2E4052;
+		box-shadow: 5px 0px 18px 2px grey;
+		z-index: 4;
+	}
+	#futcont{
+		position: absolute;
+		top:10%;
+		left:5%;
+		height:80%;
+		width:90%;
+	}
+	#futlogcont{
+		position: absolute;
+		top:32%;
+		left:0;
+		height:36%;
+		width:30%;
+		color:#f2f2f2;
+		font-family: 'Candara';
+		font-size:2vw;
+		font-weight: bold;
+	}
+	#contact{
+		position: absolute;
+		top:20%;
+		right:0;
+		width:20%;
+		height:60%;
+	}
+	#ltextcont{
+		position: absolute;
+		top:10%;
+		width:15%;
+		height:80%;
+		border-right:2px solid #f2f2f2;
+		text-align: right;
+	}
+	#aboutme{
+		display: none;
+	}
+	#copyright{
+		position: absolute;
+		padding-top: 5px;
+		padding-bottom: 10px;
+		width: 100%;
+		margin: auto;
+		bottom: 0;
+		left: 0;
+		z-index: 3;
+		text-align: center;
+		font-size: 1.2vw;
+		font-family: 'candara';
+		font-weight: bold;
+		color:#f2f2f2;
+	}
+/*phone*/
+		@media screen and (max-width: 800px){
+		/*header*/
+			#navigation-container{
+				height: 14%;
+				position: fixed;
+			}
+			#navcontent{
+				left:0;
+				top:7%;
+				width:100%;
+				}
+			#logo-container{
+				width:20%;
+				left:40%;
+				height: 60%;
+			}
+			.dersler{
+				display: block;
+			}
+			#menu{
+				position: absolute;
+				left:5%;
+				top:55%;
+				width:100%;
+				height:20%;
+				text-align: center;
+			}
+			.dropdown{
+				display: none;
+			}
+			.dersler{
+				display:block;
+			}
+			.topnav a {
+				float: left;
+				color: #2E4052;
+				padding: 2px 7px;
+				text-align: center;
+				text-decoration: none;
+				font-size: 2.8vw;
+				font-family:'Candara';
+				font-weight: bold;}
+			.topnav a:hover {
+				background-color:#2E4052;
+				color: #f2f2f2;}
+			.topnav a.active {
+				background-color:#f2f2f2;
+				color: #2E4052;
+				border-top:solid 1px #2E4052;				
+				border-bottom:solid 1px #2E4052;
+				font-weight: bolder;}
+		/*table*/
+			#bizsiz{
+				position: absolute;
+				top:118%;
+				height:54%;
+				width: 100%;
+				left: 0;
+			}
+			.container, .container2{
+				left:6%;
+				width:80%;
+			}
+			.adbox{
+				font:5.6vw Candara;
+			}
+			.middle a{
+				font-size: 8.5vw;
+			}
+
+			.container{
+			top:8%;
+			}	
+			.container2{
+			top:40%;
+			}
+			#contbox{
+				left:4%;
+				width: 92%;
+				height: 70%;
+			}
+			#starcost{
+				font-size: 2.8vw;
+			}
+			#myInput {
+			  	width: 50%; /* Full-width */
+			  	font-size: 4.2vw; /* Increase font-size */
+			  	color: #2E4052;
+			  	font-family: 'candara';
+			  	background-color: #f2f2f2;
+			  	border:none;
+			  	border-bottom:solid 2px #2E4052;
+			  	}
+			#myInput :focus{
+			  	border:none;
+			  	border-top:solid 2px #2e4052;
+			}
+			#myTable {
+				border-collapse: collapse;
+				width: 100%;
+				border: 1px solid grey;
+				font-size: 3.1vw;
+				font-family: 'Century Gothic';
+			}
+			#myTable a{
+				text-decoration: none;
+				color:#2E4052;
+			}
+			#myTable th, #myTable td {
+			  	text-align: left;
+			  	padding: 6px;
+			  	padding-left: 12px;
+			}
+			#myTable tr {
+			 	border-bottom: 1px solid grey;
+				color:#2E4052;
+			}
+			#myTable tr.header{
+			  	background-color: #2E4052;
+			  	color: #f2f2f2;
+			}
+			#myTable tr:hover{
+				background-color: #4a6882;
+				color:#F2F2F2;
+			}
+			#myTable tr.header:hover{
+				background-color: #2E4052;
+			}
+			.tooltip1 .tooltiptext1{
+				font-size: 3vw;
+			}
+			/*footer*/
+					#footer{
+						position: absolute;
+						top:176%;
+						left:0;
+						width:100%;
+						height:24%;
+						background-color: #2E4052;
+						box-shadow: 5px 0px 18px 2px grey;
+						z-index: 4;
+					}
+					#futcont{
+						position: absolute;
+						top:10%;
+						left:5%;
+						height:80%;
+						width:90%;
+						
+					}
+					.firstrow{
+						display: none;
+					}
+					#futlogcont{
+						position: absolute;
+						top:0%;
+						left:0;
+						height:36%;
+						width:30%;
+						color:#f2f2f2;
+						font-family: 'Candara';
+						font-size:6vw;
+						font-weight: bold;
+					}
+					#contact{
+						position: absolute;
+						top:40%;
+						right:0;
+						width:70%;
+						height:30%;
+						text-align: right;
+					}
+					#aboutme{
+						display: block;
+						position: absolute;
+						top:30%;
+						left:0;
+						width:35%;
+						height:60%;
+						text-align: left;	
+					}
+					.social-button{
+						height: 40px;
+						width: 40px;
+					}
+					.social-button i {
+						font-size: 20px;
+					}
+					.button3{
+						width: 100px;
+						font-size: 3vw;
+						margin-right: 0;
+					}
+					#copyright{
+						font-size: 3vw;
+					}
+			}
+		/*phonescreen 750px*/
+			@media screen and (max-width: 3in){
+				.topnav a{
+					font-size:2.6vw;
+					padding: 5px 5px; 
+				}
+				
+				.button, .button2{
+					padding: 4px;
+					width: 90px;
+				}
+				.social-button{
+					width:30px;
+					height:30px;
+				}
+				#contact{
+					width:70px;
+					height:100%;
+					top:0;
+				}
+				.social-button i {
+					font-size: 15px;
+				}
+			}
+</style>
+</head>
+<body bgcolor="#f2f2f2" onload="mynewFunction()" style="margin:0;">
+<!-- header-->
+	<div id="loader"></div>
+	<div style="display:none;" id="myDiv">	
+	<div id="navigation-container">
+		<div id="logo-container"><a href="index.html"><img src="i/logo.png" height=100%></a></div>
+		<div id="navcontent">	
+			<div id="menu">
+				<div class="topnav">
+  					<a href="index.html">Baş sahypa</a>
+  					<a href="books.html" class="active">Kitaphana</a>
+    				<div class="dropdown" id="myTopnav">
+    					<button class="dropbtn">Dersler</button>
+    					<div class="dropdown-content">
+      						<a href="turkmen.html">Türkmen dili</a>
+      						<a href="literature.html">Edebiýat</a>
+      						<a href="english.html">Iňlis dili</a>
+	  						<a href="german.html">Nemes dili</a>
+	  						<a href="other.html">Beýlekiler</a>
+    					</div>
+  					</div>
+  					<a href="lessons.html" class="dersler">Dersler</a>
+  					<a href="competition.html">Bäsleşikler</a>
+  					<a href="https://toweregesyn.wordpress.com/" target="_blank">Töwerege Syn</a>
+				</div>
+			</div>
+		</div>		
+	</div>
+<!-- body-->
+	<div id="contbox">
+		
+		<div id="searchbox">
+		<input type="text" id="myInput" onkeyup="tablefunction()" placeholder="Gözle..." title="Kitabyň adyny ýaz!">
+		</div>
+		<div id="tablebox">
+			<table id="myTable">
+				<tr class="header">
+					<th style="width:80%;">Kitabyň ady</th>
+				    <th style="width:20%;">Göwrümi</th>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/1qKzbPrSX8kUGvQaycZHciPqmSA1YvBw9/view?usp=sharing" target="_blank">Aýtmaly habarym bar - R. Gylyjow</a></td>
+				    <td>3.43 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/1IFrbR6MfNC3j0FE4B9faCRTGZNHIj9kf/view?usp=sharing" target="_blank">Edebiýat 5</a></td>
+				    <td>20.9 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/1tuU7x-Y7LwuSOs2QDFLOzqSzU6s6BYuA/view?usp=sharing" target="_blank">Edebiýat 6</a></td>
+				    <td>34.1 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/1OUy9F6oJk9XrBtJXBzduM_f5yKU-hxOZ/view?usp=sharing" target="_blank">Edebiýat 9</a></td>
+				    <td>19.5 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/17JZWTltplHMaYgQH1d-yfysjqzewwLWF/view?usp=sharing" target="_blank">Edebiýat 10</a></td>
+				    <td>14.9 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/15bC2vg_X2tEu57e-BRGiUQ2bKvkNB1pW/view?usp=sharing" target="_blank">Edebiýat 11</a></td>
+				    <td>4.83 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/1nTWXdEhO51QC6OSA-J1XP3_res2yNGCk/view?usp=sharing" target="_blank">Fizika 6</a></td>
+				    <td>15.9 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/1gi2NgyknvZ5Js8EnWF0Jh3T19WFGUc4B/view?usp=sharing" target="_blank">Fizika 8</a></td>
+				    <td>5.68 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/1Ny4qh2AI0yMIIlCkjVwwLQ5V7DkqCzQW/view?usp=sharing" target="_blank">Fizika 9</a></td>
+				    <td>6.17 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/1J0aK1ZdoxsJw7Zbq104s1f2A-u1K0bTS/view?usp=sharing" target="_blank">Fizika 10</a></td>
+				    <td>7.47 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/1KP1qaPOAviO2fD0YiQdoy6XqcPpQPS5k/view?usp=sharing" target="_blank">Fizika 11</a></td>
+				    <td>6.04 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/1hfxiY7xOyHZr_FgvL0iEsBrAfuRoRrLx/view?usp=sharing" target="_blank">Goşgular - G. Ezizow</a></td>
+				    <td>2.36 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/1sTxK6cdkWLx0B8s88v0U__ItD287eZRV/view?usp=sharing" target="_blank">Goşgular - K. Gurbannepesow "Oýlanma baýry"</a></td>
+				    <td>2.82 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/1YX1L-zLTEMirhAu_D4TzUQk0_yHVuHvd/view?usp=sharing" target="_blank">Goşgular - Kemine</a></td>
+				    <td>0.48. mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/1TvbBhcl3dpa-gmqMGYfPDBBis_aliUQL/view?usp=sharing" target="_blank">Goşgular - Magrupy</a></td>
+				    <td>1.15 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/1vfQNbc9iUaOeMJPuOWzzGBkdodmNA3G8/view?usp=sharing" target="_blank">Goşgular - Magtymguly</a></td>
+				    <td>0.99 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/1Q46oZaE_Z2oweB88FQvO-AtXf5Hp7kvP/view?usp=sharing" target="_blank">Goşgular - Mätäji</a></td>
+				    <td>0.44 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/1oXZS5JS4kh08PIWxpgVPJbZzdVRixCzU/view?usp=sharing" target="_blank">Goşgular - Seýdi</a></td>
+				    <td>0.41 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/1ZY-aSmyWk03-RcU9HM0tQf-sYdbtQlpf/view?usp=sharing" target="_blank">Gökdepe Galasy - N. Hojageldiýew</a></td>
+				    <td>1.51 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/1seyPL4xHAZssDRU_-7Nf-sGub3OTq2Gq/view?usp=sharing" target="_blank">Gönübek - S. Öwezbaýew</a></td>
+				    <td>0.3 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/1td1PRER0Y7FtLAXWs6fNGEIPyTYGPflp/view?usp=sharing" target="_blank">Göreş - Ç. Aşyrow</a></td>
+				    <td>1.55 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/1-c3PiyEjRS_PnTyVjR5z62VP58263zV1/view?usp=sharing" target="_blank">Iňlis dili 2</a></td>
+				    <td>61.1 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/175AgIWfmhMgrHoxm_yKUNWMZE_bVWAIz/view?usp=sharing" target="_blank">Iňlis dili 3</a></td>
+				    <td>44.8. mb</td>
+				</tr>
+				<tr class="money">
+				    <td><a href="https://drive.google.com/file/d/18hwbVZx1XGLstG_Qel7dlE8IQ5hzGwR8/view?usp=sharing" target="_blank">Matematikadan Gollama (6-11 synp)&nbsp;&nbsp;&nbsp;</a><div class="tooltip1">&#9733; <span class="tooltiptext1">Bahasy: 15TMT<br>Belgisi: KH01<br><a href="#">Gysgaça</a></span> </div></td>
+				    <td>37.5 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/1PKAghtuWsprr29ZtyEbwzgJ1int81vdK/view?usp=sharing" target="_blank">Nemes dili 2</a></td>
+				    <td>39 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/1wTkOYex9Q1Bo6Bq9iU9PlO35i2Nz0vWJ/view?usp=sharing" target="_blank">Nemes dili 3</a></td>
+				    <td>7.51 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/12_gLSbJcMxlemh_1v8B8G4JjQJbjLTEn/view?usp=sharing" target="_blank">Nemes dili 4</a></td>
+				    <td>3.72 mb</td>
+				</tr>
+
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/1inUc_vkQI9ELDS5hM6Zv9qaIPJx0ay7n/view?usp=sharing" target="_blank">Paýhas Çeşmesi</a></td>
+				    <td>162 mb</td>
+				</tr>
+
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1srNkLiN3AwQY21_jwcNyJ16zXJMVDXxA/view?usp=sharing" target="_blank">Türkmen dili 5</a></td>
+					<td>8.84 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/1srNkLiN3AwQY21_jwcNyJ16zXJMVDXxA/view?usp=sharing" target="_blank">Türkmen dili 7</a></td>
+				    <td>3.39 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/1XANr-6kwJsta3Uj72JS_RVNc00MOIMXp/view?usp=sharing" target="_blank">Türkmen dili 9</a></td>
+				    <td>17.4 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/1MxhRgnMI5FvWwoqR-71kIglgxan4Uz-I/view?usp=sharing" target="_blank">Türkmen dili 10</a></td>
+				    <td>1.88 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1Q__hCe3pRy9cV-GjLKqp4P_FPhYVMTUQ/view?usp=sharing" target="_blank">Türkmen dili 11</a></td>
+				    <td>2.35 mb</td>
+				</tr>		
+				</table>
+		</div>
+		<div id="starcost">&#9733; belgili faýllar töleglidir. Olar hakynda doly maglumat üçin <a href="about.html">FAQ</a></div>
+	</div>
+	<div id="bizsiz">
+		<div class="container">
+		<div class="adbox">
+			Siz hem biziň Telegramdaky kitap klubumyza agza boluň! Siziň üçin gapymyz elmydama açykdyr!
+		</div>
+		<div class="middle">
+	    <div class="text"><a href="https://t.me/tbookworm" target="_blank"><i class="fab fa-telegram"></i></a></div>
+		</div>
+		</div>
+		<div class="container2">
+		<div class="adbox">
+			Biziň mundan başga-da köp sanly birnäçe dillerde kitaplarymyzy okamak isleseňiz!<br>
+			Telegram kanalymyza goşulyň!
+		</div>
+		<div class="middle">
+	    <div class="text"><a href="https://t.me/yaltakitap" target="_blank"><i class="fab fa-telegram"></i></a></div>
+		</div>
+		</div>
+	</div>	
+<!-- footer -->
+	<div id="footer">
+		<div id="futcont">
+			<div id="futlogcont"><a href="index.html" style="text-decoration: none; color: #f2f2f2;">MUGALLYM</a></div>
+			<div id="contact">
+				<div class="social-buttons">
+  					<div class="tooltip"><span class="tooltiptext">habarlash.me@gmail.com</span>
+  					<a href="mailto:habarlash.me@gmail.com" target="_blank" class="social-buttons__button social-button social-button--facebook" aria-label="Facebook">
+    				<span class="social-button__inner"><i class="far fa-envelope"></i></span></a></div>
+  					<div class="tooltip"><span class="tooltiptext">"Töwerege Syn"</span>
+  					<a href="https://toweregesyn.wordpress.com/" target="_blank" class="social-buttons__button social-button social-button--linkedin" aria-label="LinkedIn">
+    				<span class="social-button__inner"><i class="fab fa-wordpress"></i></span></a></div>
+    				<div class="tooltip"><span class="tooltiptext">@yaltakitap</span>
+  					<a href="https://t.me/yaltakitap" target="_blank" class="social-buttons__button social-button social-button--snapchat" aria-label="SnapChat">
+    				<span class="social-button__inner"><i class="fab fa-telegram"></i></span></a></div>
+				</div>
+			</div>
+			<div id="ltextcont" class="firstrow" style="left:25%;">
+					<a href="turkmen.html"><button class="button1"><span>Türkmen dili</span></button></a> &nbsp; &nbsp;<br>
+					<a href="literature.html"><button class="button1"><span>Edebiýat</span></button></a> &nbsp; &nbsp;<br>
+					<a href="german.html"><button class="button1"><span>Nemes dili</span></button></a> &nbsp; &nbsp;<br>
+			</div>			
+			<div id="ltextcont" class="firstrow" style="left:40%;>
+					<a href="books.html"><button class="button1"><span>Kitaphana</span></button></a> &nbsp; &nbsp;<br>
+					<a href="competition.html"><button class="button1"><span>Bäsleşikler</span></button></a> &nbsp; &nbsp;<br>
+					<a href="english.html"><button class="button1"><span>Iňlis dili</span></button></a> &nbsp; &nbsp;<br>
+			</div>
+			<div id="ltextcont" class="firstrow" style="border-style: none; left:55%">
+					<a href="about.html"><button class="button1"><span>Biz barada</span></button></a> &nbsp; &nbsp;<br>
+					<a href="about.html"><button class="button1"><span>Goşant goş</span></button></a> &nbsp; &nbsp;<br>
+					<a href="about.html"><button class="button1"><span>FAQ</span></button></a> &nbsp; &nbsp;<br>
+			</div>
+			<div id="aboutme">
+					<a href="about.html"><button class="button3" style="position: relative; text-align: left;"><span>Biz barada</span></button></a><br>
+					<a href="about.html"><button class="button3" style="position: relative; text-align: left;"><span>Goşant goş</span></button></a><br>
+					<a href="about.html"><button class="button3" style="position: relative; text-align: left;"><span>FAQ</span></button></a>
+			</div>
+			
+		</div>
+		<div id="copyright">"Mugallym" - share your knowledge, 2021
+			</div>
+	</div>
+</div>
+</body>
+<script>
+	var myVar;
+	function mynewFunction() {
+  		myVar = setTimeout(showPage, 2000);
+	}
+	function showPage() {
+  		document.getElementById("loader").style.display = "none";
+  		document.getElementById("myDiv").style.display = "block";
+	}
+
+	function tablefunction() {
+  		var input, filter, table, tr, td, i, txtValue;
+	  		input = document.getElementById("myInput");
+	  		filter = input.value.toUpperCase();
+	  		table = document.getElementById("myTable");
+	  		tr = table.getElementsByTagName("tr");
+  		for (i = 0; i < tr.length; i++) {
+    		td = tr[i].getElementsByTagName("td")[0];
+	    	if (td) {
+		      	txtValue = td.textContent || td.innerText;
+		      	if (txtValue.toUpperCase().indexOf(filter) > -1) {
+		        	tr[i].style.display = "";
+		      	} 
+		      	else {
+		        	tr[i].style.display = "none";
+		      	}
+		    }       
+  		}
+	}
+</script>
+</html>
