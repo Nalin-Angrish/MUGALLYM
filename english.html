@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.1/css/all.css'><link rel="stylesheet" href="./style.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-		<link rel="stylesheet" href="css\fonts\Century Gothic.css">
+	<link rel="stylesheet" href="css\fonts\Century Gothic.css">
 	<link rel="stylesheet" href="css\fonts\Candara.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
@@ -195,45 +195,6 @@
 	.tooltip:hover .tooltiptext {
 	  	visibility: visible;
 	}
-/*tooltip1*/
-	.tooltip1 {
-  		position: relative;
-  		display: inline-block;
-	}
-	.tooltip1 .tooltiptext1{
-	  	visibility: hidden;
-	  width: 120px;
-	  background-color: #2e4052;
-	  color: #f2f2f2;
-	  text-align: center;
-	  border-radius: 6px;
-	  padding: 5px 0;
-	  font-size:1vw;
-	  font-family:'century gothic';
-	  position: absolute;
-	  z-index: 1;
-	  bottom: 150%;
-	  left: 50%;
-	  margin-left: -60px;
-	}
-	.tooltiptext1 a{
-		color:#f2f2f2;
-	}	
-
-	.tooltip1 .tooltiptext1::after {
-	  content: "";
-	  position: absolute;
-	  top: 100%;
-	  left: 50%;
-	  margin-left: -5px;
-	  border-width: 5px;
-	  border-style: solid;
-	  border-color: black transparent transparent transparent;
-	}
-
-	.tooltip1:hover .tooltiptext1 {
-	  visibility: visible;
-	}
 /*header*/	
 	#navigation-container{
 		position:fixed;
@@ -292,11 +253,11 @@
   		font-size: 1vw;
   		border: none;
   		outline: none;
-  		color: #2E4052;
+  		color: #f2f2f2;
   		padding: 10px 10px;
   		font-family: 'Candara';
   		font-weight: bold;
-  		background-color: #f2f2f2;}
+  		background-color: #2E4052;}
 	.navbar a:hover, .dropdown:hover .dropbtn {
  		background-color:#4a6882;
   		color:#f2f2f2;}	
@@ -320,71 +281,28 @@
 	.dropdown:hover 
 	.dropdown-content {display: block;}
 /*body*/
-	.container, .container2{
+	#dersbox{
 		position: absolute;
-		right:7%;
-		width:20%;
-		height: auto;
-		text-align: center;
-		border:2px dashed #2E4052;
-		padding:8px;
-	}
-	.container{
-		top:26%;
-	}	
-	.container2{
-		top:48%;
-	}
-	.adbox{
-		font:1.3vw Candara;
-		color:#2E4052;
-		opacity: 1;
-		transition: .5s ease;
-  		backface-visibility: hidden;
-  		display: block;
-  		width: 100%;
-  		height: auto;
-	}
-	.middle {
-	  	transition: .5s ease;
-	  	opacity: 0;
-	  	position: absolute;
-	  	top: 50%;
-	  	left: 50%;
-	  	transform: translate(-50%, -50%);
-	  	-ms-transform: translate(-50%, -50%);
-	  	text-align: center;
-	}
-	.middle a{
+		top:0;
+		left: 0;
+		height: 10%;
+		width: auto;
 		color: #2E4052;
-		font-size: 4.5vw;
-		text-decoration: none;
-	}
-	.container:hover .adbox {
-  		opacity: 0.2;
-	}
-	.container2:hover .adbox {
-  		opacity: 0.2;
-	}
-	.container:hover .middle {
-  		opacity: 1;
-	}
-	.container2:hover .middle {
-  		opacity: 1;
+		font:bold 2vw 'candara';
 	}
 	#contbox{
 		position: absolute;
-		top:20%;
+		top:16%;
 		left:15%;
-		height:50%;
-		width: 50%;
+		height:54%;
+		width: 70%;
 	}
 	#tablebox{
 		position: absolute;
 		bottom:5%;
 		left:0;
 		width:100%;
-		height:80%;
+		height:70%;
 		overflow: auto;
 		border-bottom:1px solid grey;
 		border-top:1px solid grey;
@@ -392,7 +310,7 @@
 	#searchbox{
 		position: absolute; 
 		width: 100%; 
-		top:0%;
+		top:12%;
 		height: 10%;
 	}
 	#starcost{
@@ -452,6 +370,7 @@
 		#myTable tr.header{
 		  	background-color: #2E4052;
 		  	color: #f2f2f2;
+
 		}
 		#myTable tr:hover{
 			color: #f2f2f2;
@@ -462,12 +381,6 @@
 		}
 		#myTable td:hover a{
 			color:#f2f2f2;
-		}
-		#myTable .money:hover a{
-			color:gold;
-		}
-		#myTable .money:hover{
-			color:gold;
 		}
 		#myTable tr.header:hover{
 			background-color: #2E4052;
@@ -536,10 +449,9 @@
 	}
 /*phone*/
 		@media screen and (max-width: 800px){
-		/*header*/
+			/*header*/
 			#navigation-container{
 				height: 14%;
-				position: fixed;
 			}
 			#navcontent{
 				left:0;
@@ -606,35 +518,14 @@
 	  			background-color: #4a6882;
 	  			color:#f2f2f2;}
 		/*table*/
-			#bizsiz{
-				position: absolute;
-				top:118%;
-				height:54%;
-				width: 100%;
-				left: 0;
-			}
-			.container, .container2{
-				left:6%;
-				width:80%;
-			}
-			.adbox{
-				font:4.6vw Candara;
-			}
-			.middle a{
-				font-size: 8.5vw;
-			}
-			.container{
-			top:5%;
-			border-width:4px;
-			}	
-			.container2{
-			top:45%;
-			border-width:4px;
-			}
 			#contbox{
 				left:4%;
 				width: 92%;
-				height: 70%;
+			}
+			#dersbox{
+				top:3%;
+				color: #2E4052;
+				font:bold 5vw 'candara';
 			}
 			#starcost{
 				font-size: 2.8vw;
@@ -683,16 +574,10 @@
 			#myTable tr.header:hover{
 				background-color: #2E4052;
 			}
-			.tooltip1 .tooltiptext1{
-				font-size: 3vw;
-			}
-			.tooltip .tooltiptext{
-						top:-90%;	
-					}
 			/*footer*/
 					#footer{
 						position: absolute;
-						top:176%;
+						bottom:0;
 						left:0;
 						width:100%;
 						height:24%;
@@ -754,6 +639,9 @@
 					#copyright{
 						font-size: 3vw;
 					}
+					.tooltip .tooltiptext{
+						top:-90%;	
+					}
 			}
 		/*phonescreen 750px*/
 			@media screen and (max-width: 3in){
@@ -791,7 +679,7 @@
 			<div id="menu">
 				<div class="topnav">
   					<a href="index.html">Baş sahypa</a>
-  					<a href="books.html" class="active">Kitaphana</a>
+  					<a href="books.html">Kitaphana</a>
     				<div class="dropdown" id="myTopnav">
     					<button class="dropbtn">Dersler</button>
     					<div class="dropdown-content">
@@ -802,7 +690,6 @@
 	  						<a href="other.html">Beýlekiler</a>
     					</div>
   					</div>
-  					
   					<a href="competition.html">Bäsleşikler</a>
   					<a href="https://toweregesyn.wordpress.com/" target="_blank">Töwerege Syn</a>
 				</div>
@@ -811,169 +698,197 @@
 	</div>
 <!-- body-->
 	<div id="contbox">
-		
+		<div id="dersbox">Iňlis dili dersinden görkezme sapaklar</div>
 		<div id="searchbox">
 		<input type="text" id="myInput" onkeyup="tablefunction()" placeholder="Gözle..." title="Kitabyň adyny ýaz!">
 		</div>
 		<div id="tablebox">
 			<table id="myTable">
 				<tr class="header">
-					<th style="width:80%;">Kitabyň ady</th>
+					<th style="width:80%;">Temanyň ady</th>
 				    <th style="width:20%;">Göwrümi</th>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1qKzbPrSX8kUGvQaycZHciPqmSA1YvBw9/view?usp=sharing" target="_blank">Aýtmaly habarym bar - R. Gylyjow</a></td>
-				    <td>3.43 mb</td>
+					<td><a href="https://drive.google.com/file/d/1CP_w70fnQpYwEXzS8Uol4TyIXX46Rbvj/view?usp=sharing" target="_blank">Active vs Passive Voice</a></td>
+					<td>0.12 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1IFrbR6MfNC3j0FE4B9faCRTGZNHIj9kf/view?usp=sharing" target="_blank">Edebiýat 5</a></td>
-				    <td>20.9 mb</td>
+				    <td><a href="https://drive.google.com/file/d/1XzF9ylUsHkpfL0vwPYTY4I_jYIbFPzJ9/view?usp=sharing" target="_blank">Adjectives</a></td>
+				    <td>1.60 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1tuU7x-Y7LwuSOs2QDFLOzqSzU6s6BYuA/view?usp=sharing" target="_blank">Edebiýat 6</a></td>
-				    <td>34.1 mb</td>
+				    <td><a href="https://drive.google.com/file/d/19S70qZ3zAwmaCoRgv7kdMEoV_4aSwAQ7/view?usp=sharing" target="_blank">Alphabet</a></td>
+				    <td>0.75 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1OUy9F6oJk9XrBtJXBzduM_f5yKU-hxOZ/view?usp=sharing" target="_blank">Edebiýat 9</a></td>
-				    <td>19.5 mb</td>
+				    <td><a href="https://drive.google.com/file/d/1RdLcQy6vLyHVLp8tZHxwTLlljq4NFy8E/view?usp=sharing" target="_blank">American holidays</a></td>
+				    <td>3.99 mb</td>
 				</tr>
 				<tr>
-					<td><a href="https://drive.google.com/file/d/17JZWTltplHMaYgQH1d-yfysjqzewwLWF/view?usp=sharing" target="_blank">Edebiýat 10</a></td>
-				    <td>14.9 mb</td>
+				    <td><a href="https://drive.google.com/file/d/1om3agEvrOU85jKINBC9Zl6p8os-0zqEO/view?usp=sharing" target="_blank">Ay the zoo</a></td>
+				    <td>3.99 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/15bC2vg_X2tEu57e-BRGiUQ2bKvkNB1pW/view?usp=sharing" target="_blank">Edebiýat 11</a></td>
-				    <td>4.83 mb</td>
+				    <td><a href="https://drive.google.com/file/d/1dQVDyrI3b6EbKdVfwnkGAi1_10hVHHG4/view?usp=sharing" target="_blank">British holidays</a></td>
+				    <td>12.1 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1nTWXdEhO51QC6OSA-J1XP3_res2yNGCk/view?usp=sharing" target="_blank">Fizika 6</a></td>
-				    <td>15.9 mb</td>
+				    <td><a href="https://drive.google.com/file/d/1kDGmcCpb_-OQedI4nRDk46fsG-_w9Q-p/view?usp=sharing" target="_blank">Comparative & Superlative</a></td>
+				    <td>1.41 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1gi2NgyknvZ5Js8EnWF0Jh3T19WFGUc4B/view?usp=sharing" target="_blank">Fizika 8</a></td>
-				    <td>5.68 mb</td>
+				    <td><a href="https://drive.google.com/file/d/1Bli2QGuXTarHClYi2qzMlT9lsG-R-Uk_/view?usp=sharing" target="_blank">Comparison of adjectives</a></td>
+				    <td>0.15 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1Ny4qh2AI0yMIIlCkjVwwLQ5V7DkqCzQW/view?usp=sharing" target="_blank">Fizika 9</a></td>
-				    <td>6.17 mb</td>
+				    <td><a href="https://drive.google.com/file/d/1gBOlSueje8KLnZuKzkBa8aSuymtz-E4S/view?usp=sharing" target="_blank">Comparison of adjectives 2</a></td>
+				    <td>0.68 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1J0aK1ZdoxsJw7Zbq104s1f2A-u1K0bTS/view?usp=sharing" target="_blank">Fizika 10</a></td>
-				    <td>7.47 mb</td>
+				    <td><a href="https://drive.google.com/file/d/1V3dZZsfKK5Yg_DcHbtF-U-opXSJa--fh/view?usp=sharing" target="_blank">Conditionals</a></td>
+				    <td>0.22 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1KP1qaPOAviO2fD0YiQdoy6XqcPpQPS5k/view?usp=sharing" target="_blank">Fizika 11</a></td>
-				    <td>6.04 mb</td>
+				    <td><a href="https://drive.google.com/file/d/16SujgkpdiR2DNKuhS2ag05icFtyDK5LT/view?usp=sharing" target="_blank">Earth</a></td>
+				    <td>0.68 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1hfxiY7xOyHZr_FgvL0iEsBrAfuRoRrLx/view?usp=sharing" target="_blank">Goşgular - G. Ezizow</a></td>
-				    <td>2.36 mb</td>
+				    <td><a href="https://drive.google.com/file/d/1wzCL2Xa3h8ltQLUZRQrePhl2Tk40F3Hx/view?usp=sharing" target="_blank">Friendship</a></td>
+				    <td>0.24 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1sTxK6cdkWLx0B8s88v0U__ItD287eZRV/view?usp=sharing" target="_blank">Goşgular - K. Gurbannepesow "Oýlanma baýry"</a></td>
-				    <td>2.82 mb</td>
+				    <td><a href="https://drive.google.com/file/d/1L39wi6Dz0hCzCeiA_4eeOwL3AFMrHeKE/view?usp=sharing" target="_blank">Fruits</a></td>
+				    <td>1.21 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1YX1L-zLTEMirhAu_D4TzUQk0_yHVuHvd/view?usp=sharing" target="_blank">Goşgular - Kemine</a></td>
-				    <td>0.48. mb</td>
+				    <td><a href="https://drive.google.com/file/d/1UnoGz1szmZkNuDXd1C6eHrKO8MpLkWiw/view?usp=sharing" target="_blank">Holidays in Great Britain</a></td>
+				    <td>3.46 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1TvbBhcl3dpa-gmqMGYfPDBBis_aliUQL/view?usp=sharing" target="_blank">Goşgular - Magrupy</a></td>
-				    <td>1.15 mb</td>
+				    <td><a href="https://drive.google.com/file/d/1RdLcQy6vLyHVLp8tZHxwTLlljq4NFy8E/view?usp=sharing" target="_blank">Holidays in USA</a></td>
+				    <td>3.18 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1vfQNbc9iUaOeMJPuOWzzGBkdodmNA3G8/view?usp=sharing" target="_blank">Goşgular - Magtymguly</a></td>
-				    <td>0.99 mb</td>
+				    <td><a href="https://drive.google.com/file/d/1OpZ0uNEdCLoG0GwqLuTyiI_t_Z0g3l2c/view?usp=sharing" target="_blank">How much?/How many?</a></td>
+				    <td>0.47 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1Q46oZaE_Z2oweB88FQvO-AtXf5Hp7kvP/view?usp=sharing" target="_blank">Goşgular - Mätäji</a></td>
-				    <td>0.44 mb</td>
+				    <td><a href="https://drive.google.com/file/d/1GQGkRlyTlrMr3FtdWmXld-k_LQP_dUIX/view?usp=sharing" target="_blank">If clause</a></td>
+				    <td>0.17 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1oXZS5JS4kh08PIWxpgVPJbZzdVRixCzU/view?usp=sharing" target="_blank">Goşgular - Seýdi</a></td>
-				    <td>0.41 mb</td>
+				    <td><a href="https://drive.google.com/file/d/1cGtSFLKILM-c2V4DWNURAzaISEhM_UK1/view?usp=sharing" target="_blank">Indirect speech</a></td>
+				    <td>0.18 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1ZY-aSmyWk03-RcU9HM0tQf-sYdbtQlpf/view?usp=sharing" target="_blank">Gökdepe Galasy - N. Hojageldiýew</a></td>
-				    <td>1.51 mb</td>
+				    <td><a href="https://drive.google.com/file/d/16Os9Ia6UNuJcknD5K1hK5voSB5uWAiPK/view?usp=sharing" target="_blank">London</a></td>
+				    <td>2.09 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1seyPL4xHAZssDRU_-7Nf-sGub3OTq2Gq/view?usp=sharing" target="_blank">Gönübek - S. Öwezbaýew</a></td>
-				    <td>0.3 mb</td>
+				    <td><a href="https://drive.google.com/file/d/1fROnaXq7xm0rGaL7S1dkbFEg64W3jPph/view?usp=sharing" target="_blank">London 2</a></td>
+				    <td>2.09 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1td1PRER0Y7FtLAXWs6fNGEIPyTYGPflp/view?usp=sharing" target="_blank">Göreş - Ç. Aşyrow</a></td>
-				    <td>1.55 mb</td>
+				    <td><a href="https://drive.google.com/file/d/1mflAcP6mWwOEjjmG5YwN37SY8AgLURXf/view?usp=sharing" target="_blank">New York</a></td>
+				    <td>4.26 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1-c3PiyEjRS_PnTyVjR5z62VP58263zV1/view?usp=sharing" target="_blank">Iňlis dili 2</a></td>
-				    <td>61.1 mb</td>
+				    <td><a href="https://drive.google.com/file/d/1lFoeHW1JDneDKs29AHWhNjCM36to1Tgi/view?usp=sharing" target="_blank">Passive voice</a></td>
+				    <td>1.03 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/175AgIWfmhMgrHoxm_yKUNWMZE_bVWAIz/view?usp=sharing" target="_blank">Iňlis dili 3</a></td>
-				    <td>44.8. mb</td>
+				    <td><a href="https://drive.google.com/file/d/1GbxFZ5wzIj3ociwoxu8TjErVgmL42nYi/view?usp=sharing" target="_blank">Passive voice 2</a></td>
+				    <td>0.93 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1PKAghtuWsprr29ZtyEbwzgJ1int81vdK/view?usp=sharing" target="_blank">Nemes dili 2</a></td>
-				    <td>39 mb</td>
+				    <td><a href="https://drive.google.com/file/d/1jrFvEoIRTJn8Cphqi1qMNjNLoUxoVU11/view?usp=sharing" target="_blank">Past Perfect Simple & Continuous</a></td>
+				    <td>0.12 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1wTkOYex9Q1Bo6Bq9iU9PlO35i2Nz0vWJ/view?usp=sharing" target="_blank">Nemes dili 3</a></td>
-				    <td>7.51 mb</td>
+				    <td><a href="https://drive.google.com/file/d/1HhlvghwkcsNgIS8Cn2_jYTG-lLHDluen/view?usp=sharing" target="_blank">Prepositions</a></td>
+				    <td>0.38 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/12_gLSbJcMxlemh_1v8B8G4JjQJbjLTEn/view?usp=sharing" target="_blank">Nemes dili 4</a></td>
-				    <td>3.72 mb</td>
-				</tr>
-
-				<tr>
-				    <td><a href="https://drive.google.com/file/d/1inUc_vkQI9ELDS5hM6Zv9qaIPJx0ay7n/view?usp=sharing" target="_blank">Paýhas Çeşmesi</a></td>
-				    <td>162 mb</td>
-				</tr>
-
-				<tr>
-					<td><a href="https://drive.google.com/file/d/1srNkLiN3AwQY21_jwcNyJ16zXJMVDXxA/view?usp=sharing" target="_blank">Türkmen dili 5</a></td>
-					<td>8.84 mb</td>
+				    <td><a href="https://drive.google.com/file/d/1_IL0EuesRybtQhSzjQ3j9FyHcnDscYhF/view?usp=sharing" target="_blank">Present Perfect</a></td>
+				    <td>0.89 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1srNkLiN3AwQY21_jwcNyJ16zXJMVDXxA/view?usp=sharing" target="_blank">Türkmen dili 7</a></td>
-				    <td>3.39 mb</td>
+				    <td><a href="https://drive.google.com/file/d/1DcbtajEmfFQT-R2eA0A0Q3feT7Ya38FI/view?usp=sharing" target="_blank">Present Perfect Continuous</a></td>
+				    <td>0.30 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1XANr-6kwJsta3Uj72JS_RVNc00MOIMXp/view?usp=sharing" target="_blank">Türkmen dili 9</a></td>
-				    <td>17.4 mb</td>
+				    <td><a href="https://drive.google.com/file/d/199x65uC9__oEhdlS3Ig04j_8X8nCrews/view?usp=sharing" target="_blank">Present Perfect Passive</a></td>
+				    <td>1.90 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1MxhRgnMI5FvWwoqR-71kIglgxan4Uz-I/view?usp=sharing" target="_blank">Türkmen dili 10</a></td>
-				    <td>1.88 mb</td>
+				    <td><a href="https://drive.google.com/file/d/19RgHsa3BW9Jn4iy5T0BqPEK2I128QF9V/view?usp=sharing" target="_blank">Present Perfect Progressive</a></td>
+				    <td>1.61 mb</td>
 				</tr>
 				<tr>
-					<td><a href="https://drive.google.com/file/d/1Q__hCe3pRy9cV-GjLKqp4P_FPhYVMTUQ/view?usp=sharing" target="_blank">Türkmen dili 11</a></td>
-				    <td>2.35 mb</td>
-				</tr>		
+				    <td><a href="https://drive.google.com/file/d/1WAvQKnmB2FX5rRUxFsiA95SGijverXdY/view?usp=sharing" target="_blank">Present Perfect Simple</a></td>
+				    <td>1.61 mb</td>
+				</tr>
+				
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/1XrcyreN30cLmOOykzON132Yee40psJAq/view?usp=sharing" target="_blank">Present Perfect Simple & Continuous</a></td>
+				    <td>0.50 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/1J_egiSTP51BlPypzS2gXzg8fUy5bvIxd/view?usp=sharing" target="_blank">Professions</a></td>
+				    <td>0.50 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/1zQYreKvfw4BebjyUCehj9jW9XtS7QrO2/view?usp=sharing" target="_blank">Public Holidays in the USA</a></td>
+				    <td>3.90 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/18IlWgXXocc8topR2WPlP8CN-SyMT3HcG/view?usp=sharing" target="_blank">Reported Speech</a></td>
+				    <td>0.26 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/1mcNCBKy8GKcqmuxZfb4VK2xyal0gw4Yn/view?usp=sharing" target="_blank">Reported Speech 2</a></td>
+				    <td>0.26 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/10DqUxcZcn-HBiPgB2UDEgiweFqqCZ23Q/view?usp=sharing" target="_blank">Seasons</a></td>
+				    <td>0.45 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/1rOxUCAhRqXxw15yu0QSFxkj20tpuGAgd/view?usp=sharing" target="_blank">Second Conditional</a></td>
+				    <td>0.45 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/1XWlK8vO0KtOIGjnLZ3rCb4K54cEqGPwv/view?usp=sharing" target="_blank">Technology</a></td>
+				    <td>0.30 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/1ffR8bUGm_5qiNaUbKDydHt5Jj7HV8YeM/view?usp=sharing" target="_blank">Thanksgiving Day in the USA</a></td>
+				    <td>1.95 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/15CBPAaqDHRD35O93x2hrs5_9bNBKJ27u/view?usp=sharing" target="_blank">Tongue Twisters</a></td>
+				    <td>0.30 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/11IfrIihCK0QEECwL_Ds_eDGenvc_LOCn/view?usp=sharing" target="_blank">Traditions and holidays of Great Britain</a></td>
+				    <td>1.30 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/11r04Ir_A_GyZdppLmOFdGYSkmmh0kiMu/view?usp=sharing" target="_blank">Verb Tenses</a></td>
+				    <td>0.13 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/1K7rxVVyyNi6VSUsMcDxUprGUGFXVfs9S/view?usp=sharing" target="_blank">Weather</a></td>
+				    <td>2.85 mb</td>
+				</tr>
+				<tr>
+				    <td><a href="https://drive.google.com/file/d/1M7g77CxJ7XqAOfPmJPe5sTZBfOfyOqtX/view?usp=sharing" target="_blank">William Shakespeare</a></td>
+				    <td>4.33 mb</td>
+				</tr>																
 				</table>
 		</div>
 		<div id="starcost">&#9733; belgili faýllar töleglidir. Olar hakynda doly maglumat üçin <a href="about.html">FAQ</a></div>
 	</div>
-	<div id="bizsiz">
-		<div class="container">
-		<div class="adbox">
-			Siz hem biziň Telegramdaky kitap klubumyza agza boluň! Siziň üçin gapymyz elmydama açykdyr!
-		</div>
-		<div class="middle">
-	    <div class="text"><a href="https://t.me/tbookworm" target="_blank"><i class="fab fa-telegram"></i></a></div>
-		</div>
-		</div>
-		<div class="container2">
-		<div class="adbox">
-			Biziň mundan başga-da köp sanly birnäçe dillerde kitaplarymyzy okamak isleseňiz!<br>
-			Telegram kanalymyza goşulyň!
-		</div>
-		<div class="middle">
-	    <div class="text"><a href="https://t.me/yaltakitap" target="_blank"><i class="fab fa-telegram"></i></a></div>
-		</div>
-		</div>
-	</div>	
 <!-- footer -->
 	<div id="footer">
 		<div id="futcont">

@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.1/css/all.css'><link rel="stylesheet" href="./style.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-		<link rel="stylesheet" href="css\fonts\Century Gothic.css">
+	<link rel="stylesheet" href="css\fonts\Century Gothic.css">
 	<link rel="stylesheet" href="css\fonts\Candara.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
@@ -170,7 +170,6 @@
 	.tooltip .tooltiptext {
 	  	visibility: hidden;
 	  	width: 120px;
-	  
 	  	color: #f2f2f2;
 	  	font-size: 16px;
 	  	font-family:'Century Gothic';
@@ -201,7 +200,7 @@
   		display: inline-block;
 	}
 	.tooltip1 .tooltiptext1{
-	  	visibility: hidden;
+	  visibility: hidden;
 	  width: 120px;
 	  background-color: #2e4052;
 	  color: #f2f2f2;
@@ -287,16 +286,18 @@
 		color: #f2f2f2;}
 	.dropdown {
  		float: left;
-		overflow: hidden;}
+		overflow: hidden;
+		z-index: 20;
+		}
 	.dropdown .dropbtn {
   		font-size: 1vw;
   		border: none;
   		outline: none;
-  		color: #2E4052;
+  		color: #f2f2f2;
   		padding: 10px 10px;
   		font-family: 'Candara';
   		font-weight: bold;
-  		background-color: #f2f2f2;}
+  		background-color: #2E4052;}
 	.navbar a:hover, .dropdown:hover .dropbtn {
  		background-color:#4a6882;
   		color:#f2f2f2;}	
@@ -320,71 +321,28 @@
 	.dropdown:hover 
 	.dropdown-content {display: block;}
 /*body*/
-	.container, .container2{
+	#dersbox{
 		position: absolute;
-		right:7%;
-		width:20%;
-		height: auto;
-		text-align: center;
-		border:2px dashed #2E4052;
-		padding:8px;
-	}
-	.container{
-		top:26%;
-	}	
-	.container2{
-		top:48%;
-	}
-	.adbox{
-		font:1.3vw Candara;
-		color:#2E4052;
-		opacity: 1;
-		transition: .5s ease;
-  		backface-visibility: hidden;
-  		display: block;
-  		width: 100%;
-  		height: auto;
-	}
-	.middle {
-	  	transition: .5s ease;
-	  	opacity: 0;
-	  	position: absolute;
-	  	top: 50%;
-	  	left: 50%;
-	  	transform: translate(-50%, -50%);
-	  	-ms-transform: translate(-50%, -50%);
-	  	text-align: center;
-	}
-	.middle a{
+		top:0;
+		left: 0;
+		height: 10%;
+		width: auto;
 		color: #2E4052;
-		font-size: 4.5vw;
-		text-decoration: none;
-	}
-	.container:hover .adbox {
-  		opacity: 0.2;
-	}
-	.container2:hover .adbox {
-  		opacity: 0.2;
-	}
-	.container:hover .middle {
-  		opacity: 1;
-	}
-	.container2:hover .middle {
-  		opacity: 1;
+		font:bold 2vw 'candara';
 	}
 	#contbox{
 		position: absolute;
-		top:20%;
+		top:16%;
 		left:15%;
-		height:50%;
-		width: 50%;
+		height:54%;
+		width: 70%;
 	}
 	#tablebox{
 		position: absolute;
 		bottom:5%;
 		left:0;
 		width:100%;
-		height:80%;
+		height:70%;
 		overflow: auto;
 		border-bottom:1px solid grey;
 		border-top:1px solid grey;
@@ -392,7 +350,7 @@
 	#searchbox{
 		position: absolute; 
 		width: 100%; 
-		top:0%;
+		top:12%;
 		height: 10%;
 	}
 	#starcost{
@@ -403,7 +361,7 @@
 		width: 100%;
 		color:#2E4052;
 		padding-top: 4px;
-		font:0.8vw candara;	
+		font:0.8vw 'candara';	
 	}
 	#starcost a{
 		text-decoration: underline;
@@ -452,6 +410,7 @@
 		#myTable tr.header{
 		  	background-color: #2E4052;
 		  	color: #f2f2f2;
+
 		}
 		#myTable tr:hover{
 			color: #f2f2f2;
@@ -536,10 +495,9 @@
 	}
 /*phone*/
 		@media screen and (max-width: 800px){
-		/*header*/
+			/*header*/
 			#navigation-container{
 				height: 14%;
-				position: fixed;
 			}
 			#navcontent{
 				left:0;
@@ -606,35 +564,14 @@
 	  			background-color: #4a6882;
 	  			color:#f2f2f2;}
 		/*table*/
-			#bizsiz{
-				position: absolute;
-				top:118%;
-				height:54%;
-				width: 100%;
-				left: 0;
-			}
-			.container, .container2{
-				left:6%;
-				width:80%;
-			}
-			.adbox{
-				font:4.6vw Candara;
-			}
-			.middle a{
-				font-size: 8.5vw;
-			}
-			.container{
-			top:5%;
-			border-width:4px;
-			}	
-			.container2{
-			top:45%;
-			border-width:4px;
-			}
 			#contbox{
 				left:4%;
 				width: 92%;
-				height: 70%;
+			}
+			#dersbox{
+				top:3%;
+				color: #2E4052;
+				font:bold 5vw 'candara';
 			}
 			#starcost{
 				font-size: 2.8vw;
@@ -683,16 +620,10 @@
 			#myTable tr.header:hover{
 				background-color: #2E4052;
 			}
-			.tooltip1 .tooltiptext1{
-				font-size: 3vw;
-			}
-			.tooltip .tooltiptext{
-						top:-90%;	
-					}
 			/*footer*/
 					#footer{
 						position: absolute;
-						top:176%;
+						bottom:0;
 						left:0;
 						width:100%;
 						height:24%;
@@ -754,6 +685,12 @@
 					#copyright{
 						font-size: 3vw;
 					}
+					.tooltip .tooltiptext{
+						top:-90%;	
+					}
+					.tooltip1 .tooltiptext1{
+						font-size: 3vw;
+					}
 			}
 		/*phonescreen 750px*/
 			@media screen and (max-width: 3in){
@@ -791,7 +728,7 @@
 			<div id="menu">
 				<div class="topnav">
   					<a href="index.html">Baş sahypa</a>
-  					<a href="books.html" class="active">Kitaphana</a>
+  					<a href="books.html">Kitaphana</a>
     				<div class="dropdown" id="myTopnav">
     					<button class="dropbtn">Dersler</button>
     					<div class="dropdown-content">
@@ -802,7 +739,6 @@
 	  						<a href="other.html">Beýlekiler</a>
     					</div>
   					</div>
-  					
   					<a href="competition.html">Bäsleşikler</a>
   					<a href="https://toweregesyn.wordpress.com/" target="_blank">Töwerege Syn</a>
 				</div>
@@ -811,169 +747,395 @@
 	</div>
 <!-- body-->
 	<div id="contbox">
-		
+		<div id="dersbox">Türkmen dili dersinden görkezme sapaklar</div>
 		<div id="searchbox">
 		<input type="text" id="myInput" onkeyup="tablefunction()" placeholder="Gözle..." title="Kitabyň adyny ýaz!">
 		</div>
 		<div id="tablebox">
 			<table id="myTable">
 				<tr class="header">
-					<th style="width:80%;">Kitabyň ady</th>
+					<th style="width:80%;">Temanyň ady</th>
 				    <th style="width:20%;">Göwrümi</th>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1qKzbPrSX8kUGvQaycZHciPqmSA1YvBw9/view?usp=sharing" target="_blank">Aýtmaly habarym bar - R. Gylyjow</a></td>
-				    <td>3.43 mb</td>
+					<td><a href="" target="_blank">Antonimler</a></td>
+					<td>5.34 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1IFrbR6MfNC3j0FE4B9faCRTGZNHIj9kf/view?usp=sharing" target="_blank">Edebiýat 5</a></td>
-				    <td>20.9 mb</td>
+					<td><a href="https://drive.google.com/file/d/1UnCfNkv38hFqoGbNhBO2dpiPM3U-7kXR/view?usp=sharing" target="_blank">Antonimleriň stillistik hyzmaty</a></td>
+					<td>4.57 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1tuU7x-Y7LwuSOs2QDFLOzqSzU6s6BYuA/view?usp=sharing" target="_blank">Edebiýat 6</a></td>
-				    <td>34.1 mb</td>
+					<td><a href="https://drive.google.com/file/d/1pNUyW3xr0OnEJAZnOjgF21XmD2R_TUpQ/view?usp=sharing" target="_blank">Atlar</a></td>
+					<td>5.10 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1OUy9F6oJk9XrBtJXBzduM_f5yKU-hxOZ/view?usp=sharing" target="_blank">Edebiýat 9</a></td>
-				    <td>19.5 mb</td>
+					<td><a href="https://drive.google.com/file/d/1YSNCujIgHqBFVT7pVyu6MCNCTdQMX2k9/view?usp=sharing" target="_blank">Atlaryň grammatiki aýratynlyklary</a></td>
+					<td>4.02 mb</td>
 				</tr>
 				<tr>
-					<td><a href="https://drive.google.com/file/d/17JZWTltplHMaYgQH1d-yfysjqzewwLWF/view?usp=sharing" target="_blank">Edebiýat 10</a></td>
-				    <td>14.9 mb</td>
+					<td><a href="https://drive.google.com/file/d/1sgINYzVG6lKxtBNyeWsmKeEAPfkV6jWd/view?usp=sharing" target="_blank">Baglaýjy kömekçiler</a></td>
+					<td>4.72 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/15bC2vg_X2tEu57e-BRGiUQ2bKvkNB1pW/view?usp=sharing" target="_blank">Edebiýat 11</a></td>
-				    <td>4.83 mb</td>
+					<td><a href="https://drive.google.com/file/d/1PV4jI_D_-UR6cWSgVfdZGObBRGcxGp7h/view?usp=sharing" target="_blank">Baş agzalar</a></td>
+					<td>4.42 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1nTWXdEhO51QC6OSA-J1XP3_res2yNGCk/view?usp=sharing" target="_blank">Fizika 6</a></td>
-				    <td>15.9 mb</td>
+					<td><a href="https://drive.google.com/file/d/19bbsyVTa5NOrI5ET9m9NaQ1Lw59F4f3y/view?usp=sharing" target="_blank">Başganyň sözi</a></td>
+					<td>6.57 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1gi2NgyknvZ5Js8EnWF0Jh3T19WFGUc4B/view?usp=sharing" target="_blank">Fizika 8</a></td>
-				    <td>5.68 mb</td>
+					<td><a href="https://drive.google.com/file/d/1IPjeEvOOEtjmMTdafrLTHU_zmoDkBUSU/view?usp=sharing" target="_blank">Başganyň sözüniň awtoryň sözi bilen berlişi</a></td>
+					<td>5.02 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1Ny4qh2AI0yMIIlCkjVwwLQ5V7DkqCzQW/view?usp=sharing" target="_blank">Fizika 9</a></td>
-				    <td>6.17 mb</td>
+					<td><a href="https://drive.google.com/file/d/1Y5q23BjOxEF7BCrF9viCPZM5xjUbwOvq/view?usp=sharing" target="_blank">Başganyň sözüniň epigraf hökmünde ulanylyşy</a></td>
+					<td>4.44 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1J0aK1ZdoxsJw7Zbq104s1f2A-u1K0bTS/view?usp=sharing" target="_blank">Fizika 10</a></td>
-				    <td>7.47 mb</td>
+					<td><a href="https://drive.google.com/file/d/1qwD9dRIeF5GeoK6I5j9oGeX5W4uB9Knj/view?usp=sharing" target="_blank">Başganyň sözüniň sitata hökmünde berlişi</a></td>
+					<td>4.58 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1KP1qaPOAviO2fD0YiQdoy6XqcPpQPS5k/view?usp=sharing" target="_blank">Fizika 11</a></td>
-				    <td>6.04 mb</td>
+					<td><a href="https://drive.google.com/file/d/1PSTgvQ5Z_FdJyXqkqnwaBiYRniMakQ0K/view?usp=sharing" target="_blank">Dymyk harplar bilen gutaran sözleriň ýazuw düzgüni</a></td>
+					<td>4.87 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1hfxiY7xOyHZr_FgvL0iEsBrAfuRoRrLx/view?usp=sharing" target="_blank">Goşgular - G. Ezizow</a></td>
-				    <td>2.36 mb</td>
+					<td><a href="https://drive.google.com/file/d/1951vF20ClohMtJ65eonNUfZ2JvKAV8NG/view?usp=sharing" target="_blank">Çylşyrymly eýerjeňli goşma sözlem</a></td>
+					<td>4.33 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1sTxK6cdkWLx0B8s88v0U__ItD287eZRV/view?usp=sharing" target="_blank">Goşgular - K. Gurbannepesow "Oýlanma baýry"</a></td>
-				    <td>2.82 mb</td>
+					<td><a href="https://drive.google.com/file/d/1oetyZDlLsav5eZrlW0pK30Juc10HeBk2/view?usp=sharing" target="_blank">Dar çekimlileriň düşmek düzgüni</a></td>
+					<td>4.46 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1YX1L-zLTEMirhAu_D4TzUQk0_yHVuHvd/view?usp=sharing" target="_blank">Goşgular - Kemine</a></td>
-				    <td>0.48. mb</td>
+					<td><a href="https://drive.google.com/file/d/1kc2pxIP22ORIvqNt4qYR6nsgqYKJ3ODb/view?usp=sharing" target="_blank">Deňdeş agzalarda baglanyşyk</a></td>
+					<td>4.20 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1TvbBhcl3dpa-gmqMGYfPDBBis_aliUQL/view?usp=sharing" target="_blank">Goşgular - Magrupy</a></td>
-				    <td>1.15 mb</td>
+					<td><a href="https://drive.google.com/file/d/1QINtyrbvNJaBQ-RMGI0gF6nyfsCSGlkT/view?usp=sharing" target="_blank">Deňdeş aýyrgyç</a></td>
+					<td>4.21 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1vfQNbc9iUaOeMJPuOWzzGBkdodmNA3G8/view?usp=sharing" target="_blank">Goşgular - Magtymguly</a></td>
-				    <td>0.99 mb</td>
+					<td><a href="https://drive.google.com/file/d/1euh6T8MpwHnf6MPrQoOLfi-YbM1ED7va/view?usp=sharing" target="_blank">Deňdeş doldurgçlar</a></td>
+					<td>4.32 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1Q46oZaE_Z2oweB88FQvO-AtXf5Hp7kvP/view?usp=sharing" target="_blank">Goşgular - Mätäji</a></td>
-				    <td>0.44 mb</td>
+					<td><a href="https://drive.google.com/file/d/1_U8L7UAMccnvs1krhLFfmskZoYr0lLPw/view?usp=sharing" target="_blank">Deňdeş habar</a></td>
+					<td>4.17 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1oXZS5JS4kh08PIWxpgVPJbZzdVRixCzU/view?usp=sharing" target="_blank">Goşgular - Seýdi</a></td>
-				    <td>0.41 mb</td>
+					<td><a href="https://drive.google.com/file/d/1aiJwoa6NOgWRfZGtK5SGeExXfJBo1785/view?usp=sharing" target="_blank">Doly we doly däl sözlemler</a></td>
+					<td>4.40 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1ZY-aSmyWk03-RcU9HM0tQf-sYdbtQlpf/view?usp=sharing" target="_blank">Gökdepe Galasy - N. Hojageldiýew</a></td>
-				    <td>1.51 mb</td>
+					<td><a href="https://drive.google.com/file/d/14yHGIBanrUJ6zLx_60ujdB7lQ4nJ7tGx/view?usp=sharing" target="_blank">Durnukly söz düzümi</a></td>
+					<td>4.35 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1seyPL4xHAZssDRU_-7Nf-sGub3OTq2Gq/view?usp=sharing" target="_blank">Gönübek - S. Öwezbaýew</a></td>
-				    <td>0.3 mb</td>
+					<td><a href="https://drive.google.com/file/d/1F68uhnNVDV_sxnfOQVITZNyoPemeiXFP/view?usp=sharing" target="_blank">Düýp sözlerde we goşulmalarda çekimsiz sesleriň ýazuw düzgünleri</a></td>
+					<td>4.59 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1td1PRER0Y7FtLAXWs6fNGEIPyTYGPflp/view?usp=sharing" target="_blank">Göreş - Ç. Aşyrow</a></td>
-				    <td>1.55 mb</td>
+					<td><a href="https://drive.google.com/file/d/1F68uhnNVDV_sxnfOQVITZNyoPemeiXFP/view?usp=sharing" target="_blank">Düzmeli goşma sözlemler</a></td>
+					<td>4.63 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1-c3PiyEjRS_PnTyVjR5z62VP58263zV1/view?usp=sharing" target="_blank">Iňlis dili 2</a></td>
-				    <td>61.1 mb</td>
+					<td><a href="https://drive.google.com/file/d/1e6uqzf4A5--oj2gP09ZQNFJBYXxvotFx/view?usp=sharing" target="_blank">Dyngy Belgiler</a></td>
+					<td>4.58 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/175AgIWfmhMgrHoxm_yKUNWMZE_bVWAIz/view?usp=sharing" target="_blank">Iňlis dili 3</a></td>
-				    <td>44.8. mb</td>
+					<td><a href="https://drive.google.com/file/d/1LBDiYdbAVf3_hN-DOrOvP85dcsy5FwdH/view?usp=sharing" target="_blank">Eýäniň dürli söz toparlarda ulanylyşy</a></td>
+					<td>4.56 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1PKAghtuWsprr29ZtyEbwzgJ1int81vdK/view?usp=sharing" target="_blank">Nemes dili 2</a></td>
-				    <td>39 mb</td>
+					<td><a href="https://drive.google.com/file/d/16Hsa1gBY3zb6JtQJFaLBnoyiLtlolKhQ/view?usp=sharing" target="_blank">Eýeli we eýesiz sözlem</a></td>
+					<td>4.57 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1wTkOYex9Q1Bo6Bq9iU9PlO35i2Nz0vWJ/view?usp=sharing" target="_blank">Nemes dili 3</a></td>
-				    <td>7.51 mb</td>
+					<td><a href="https://drive.google.com/file/d/1hCvPRS05OA3mFr3iE-e18a2A8h_6EUEE/view?usp=sharing" target="_blank">Eýerjeňli baglaýjylar</a></td>
+					<td>4.11 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/12_gLSbJcMxlemh_1v8B8G4JjQJbjLTEn/view?usp=sharing" target="_blank">Nemes dili 4</a></td>
-				    <td>3.72 mb</td>
+					<td><a href="https://drive.google.com/file/d/1vBaDRip8Ba7mTXYy2vY29PkKK9eJeUxn/view?usp=sharing" target="_blank">Eýerjeňli goşma sözlemlerde oturyň goýluşy</a></td>
+					<td>4.35 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/189NcJ5arDGKlqwEXzHODsAHxAHRFYIGK/view?usp=sharing" target="_blank">Garşylyk bildirýän düzmeli goşma sözlemler</a></td>
+					<td>4.44 mb</td>
 				</tr>
 
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1inUc_vkQI9ELDS5hM6Zv9qaIPJx0ay7n/view?usp=sharing" target="_blank">Paýhas Çeşmesi</a></td>
-				    <td>162 mb</td>
-				</tr>
-
-				<tr>
-					<td><a href="https://drive.google.com/file/d/1srNkLiN3AwQY21_jwcNyJ16zXJMVDXxA/view?usp=sharing" target="_blank">Türkmen dili 5</a></td>
-					<td>8.84 mb</td>
+					<td><a href="https://drive.google.com/file/d/1cgJn5r_ieplrETQYg6ENDi8ZI_U2IFfv/view?usp=sharing" target="_blank">Garşylyk bildirýän eýerjeňli goşma sözlemler</a></td>
+					<td>4.34 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1srNkLiN3AwQY21_jwcNyJ16zXJMVDXxA/view?usp=sharing" target="_blank">Türkmen dili 7</a></td>
-				    <td>3.39 mb</td>
+					<td><a href="https://drive.google.com/file/d/1UWX2s0XAwg_he-kG5NLcbTii_82eSgVS/view?usp=sharing" target="_blank">Geografik we astronomik atlar</a></td>
+					<td>4.03 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1XANr-6kwJsta3Uj72JS_RVNc00MOIMXp/view?usp=sharing" target="_blank">Türkmen dili 9</a></td>
-				    <td>17.4 mb</td>
+					<td><a href="https://drive.google.com/file/d/1GqH-WuC7a3AgI1S0lOeD61em30e9LtRQ/view?usp=sharing" target="_blank">Gepleşik</a></td>
+					<td>4.42 mb</td>
 				</tr>
 				<tr>
-				    <td><a href="https://drive.google.com/file/d/1MxhRgnMI5FvWwoqR-71kIglgxan4Uz-I/view?usp=sharing" target="_blank">Türkmen dili 10</a></td>
-				    <td>1.88 mb</td>
+					<td><a href="https://drive.google.com/file/d/1LgCKSSfV5omA9qkCn9XgtzPgk1ItHZka/view?usp=sharing" target="_blank">Gepleşigiň kyssa eserlerinde berlişi</a></td>
+					<td>4.59 mb</td>
 				</tr>
 				<tr>
-					<td><a href="https://drive.google.com/file/d/1Q__hCe3pRy9cV-GjLKqp4P_FPhYVMTUQ/view?usp=sharing" target="_blank">Türkmen dili 11</a></td>
-				    <td>2.35 mb</td>
-				</tr>		
+					<td><a href="https://drive.google.com/file/d/1-fZ4MpyOFGfnR-EHVIUzWK4-DApNPcSW/view?usp=sharing" target="_blank">Gepleşigiň şygyrlarda berlişi</a></td>
+					<td>4.58 mb</td>
+				</tr>
+				
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1mnWdlk2Rdl5zVUWsuBGs6mjYUlFGFXXZ/view?usp=sharing" target="_blank">Gezekleşik bildirýän düzmeli goşma sözlemler	</a></td>
+					<td>4.50 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1obm8k_N2OnwjJ0H6StAEgqStcTCHFIWS/view?usp=sharing" target="_blank">Goşa dyrnagyň ulanylyşy</a></td>
+					<td>4.33 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1oE7Z0LW3bzFm4wzetRraIajPbxztrhLi/view?usp=sharing" target="_blank">Goşma we ýönekeý sözlemleriň aýratynlyklary</a></td>
+					<td>4.94 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1MhzYsOAI9h92milwr9w8ySuHY7AQHFLX/view?usp=sharing" target="_blank">Goşulmalaryň görnüşleri</a></td>
+					<td>4.03 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1cAydFcAk7poWXLE0hLHD4ApQq09zNaAY/view?usp=sharing" target="_blank">Gymyldy hereketi aňladýan işlikler (kiçi synplar üçin)</a></td>
+					<td>0.68 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1cYmC2Ghd3UczsRFGzFOzv9KPEHF1zDB_/view?usp=sharing" target="_blank">Giriş sözlem</a></td>
+					<td>4.62 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1jX6sXDcjD0wvxjGR6Pt8Mngv0Nyr-90G/view?usp=sharing" target="_blank">Giriş sözler</a></td>
+					<td>4.62 mb</td>
+				</tr>
+				
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1bO9gEGNhaeAgWWw1sXhmjKuy3GrLH9d8/view?usp=sharing" target="_blank">Hakyndalyk doldurgyjy</a></td>
+					<td>7.27 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1SsHbKZ9J6sfxldnhm-1JnYZipu2dkm-J/view?usp=sharing" target="_blank">Hakyndalyk we meňzetme doldurgyçlarynyň aýyrgyçlardan tapawudy</a></td>
+					<td>4.23 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/16sjB0bpQra2lJU5erpcttWbYVc_u8wq4/view?usp=sharing" target="_blank">Hal eýerjeňli goşma sözlemler</a></td>
+					<td>4.33 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1ZwFiiXysL1oMVW5_FW1CNlrLCTVhFWwY/view?usp=sharing" target="_blank">Hallar</a></td>
+					<td>4.09 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1llLvtIATY3ye33vNKGppbRzP_gZCjOVN/view?usp=sharing" target="_blank">Hallaryň sözlemdäki hyzmaty</a></td>
+					<td>4.09 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1_andDE-jXS35otDEiqbIrQF017DZ6awD/view?usp=sharing" target="_blank">Hal-ýagdaý doldurgyjy</a></td>
+					<td>4.08 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1JfY_0MFSPQ1kKWktz-K_38UyQI3IauQK/view?usp=sharing" target="_blank">Iki nokadyň ulanylyşy</a></td>
+					<td>4.14 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1NbR8COljyWWHAqx7hpymMQXjgkm1bmcl/view?usp=sharing" target="_blank">Inçe we ýogyn çekimliler</a></td>
+					<td>8.43 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1t8gMMgEy1ZQ_PmijuYHk6swmCG8V4yJh/view?usp=sharing" target="_blank">Işlik aýyrgyjy</a></td>
+					<td>4.06 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1GzPj8Ywsi9WfmZGGePpjAZEcklCDBnv_/view?usp=sharing" target="_blank">Işlikleriň gurluş taýdan görnüşleri</a></td>
+					<td>4.38 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1lZVz0WIvUkFAKhD-I4FnAuDVfMM9iGGb/view?usp=sharing" target="_blank">Işlikleriň many aýratynlyklary</a></td>
+					<td>4.24 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/18DzOR9uLKcCvGOvnkTRqrBxYC-158uuK/view?usp=sharing" target="_blank">Işliklerde zaman aňladylyşy</a></td>
+					<td>4.72 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/11UedOvsP3JiLjO_vfx4VV6sYSvGo1KDe/view?usp=sharing" target="_blank">Jemleýji söz</a></td>
+					<td>5.20 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1Jc2IBM47LCDaczAnjeBLh6P4_wNo1sPH/view?usp=sharing" target="_blank">Jyns atlar</a></td>
+					<td>4.01 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1FJuZsjiUUxtEsWOQr26_Pl1wb14A74eG/view?usp=sharing" target="_blank">Kem işlikler</a></td>
+					<td>4.01 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1vDrWaPYAXxtr_yaYvOTu5elnlSxI_pkw/view?usp=sharing" target="_blank">Leksik normalaryň düşündirişli sözlükde görkezilişi</a></td>
+					<td>4.35 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1cezmYxfGaHVhbRnVyPAqAGqKVwSUrjUB/view?usp=sharing" target="_blank">Meňzetme doldurgyjy</a></td>
+					<td>7.18 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1b1p8j8nfspzgl-KjvORM6IwDz5hKdqOE/view?usp=sharing" target="_blank">Meňzetme eýerjeňli goşma sözlemler</a></td>
+					<td>4.33 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/11J6EPLfpDq5Tb6vNKgVHE1SSWCLXdAeb/view?usp=sharing" target="_blank">Modal sözler</a></td>
+					<td>4.45 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1Dn24aq0onVghD83C71YgvcE4X9hwnVy_/view?usp=sharing" target="_blank">Morfologiýa</a></td>
+					<td>4.22 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1g-Qo_kxvTg3MWURC4CwzsFrZUrFeW8y3/view?usp=sharing" target="_blank">Nokat</a></td>
+					<td>4.22 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1RLcHz3S-5WCCtxc8LbmpzIefhNHW9f5b/view?usp=sharing" target="_blank">Nokatly otur</a></td>
+					<td>4.33 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1KjxSin4gWyM3xv5PVX2iXxVESQU7bJYz/view?usp=sharing" target="_blank">Orfoepiýa</a></td>
+					<td>5.25 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/185z3CmC8_Sv08DF0x5DCdrpi8KvXUw55/view?usp=sharing" target="_blank">Ortak işlikler</a></td>
+					<td>4.68 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1rUwcYRBo5UKt6SVcE9VaDFyyXJOR_YnC/view?usp=sharing" target="_blank">Orun-ugur we meňzetme-deňeşdirme bildirýän hallar</a></td>
+					<td>4.32 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1Os2d-0ey8M6D9mimcgWn0lAXg4XlQUSC/view?usp=sharing" target="_blank">Otur</a></td>
+					<td>4.38 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1iRgQm_Tp3Wy50spA3BvR3zsI6MbLXNyr/view?usp=sharing" target="_blank">Sada, goşma, tirkeş işlikler</a></td>
+					<td>13.40 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1FMHsey2rmS0KjohSdA9PQL2Xcs1axnAx/view?usp=sharing" target="_blank">Sada hallaryň görnüşleri</a></td>
+					<td>4.34 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1P4iZFFHnT0XOyGY6xqYppt1sEHu-sBKp/view?usp=sharing" target="_blank">Ownuk bölekler</a></td>
+					<td>4.40 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1B0vmaUij2RrcwQh4wKXyc_s4wZJ2uZKz/view?usp=sharing" target="_blank">Sebäp bildirýän düzmeli goşma sözlemler</a></td>
+					<td>4.40 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1uJ6XTL4N14RvzcNBHo3sD4jlNQekvr_J/view?usp=sharing" target="_blank">Sebäp maksat doldurgyjy</a></td>
+					<td>4.20 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1hpRQxSBKp60AvjYm4hZ6QbQLGGvV2JD6/view?usp=sharing" target="_blank">Sesler</a></td>
+					<td>4.10 mb</td>
+				</tr>
+				<tr>
+					<td><a href="" target="_blank">Söýgülik, köplük, degişlilik, düşüm, zaman, habarlyk goşulmalarynyň ulanylyşy</a></td>
+					<td>4.34 mb</td>
+				</tr>
+				<tr>
+					<td><a href="" target="_blank">Söz düzümleri</a></td>
+					<td>5.66 mb</td>
+				</tr>
+				<tr>
+					<td><a href="" target="_blank">Söz hem goşulma</a></td>
+					<td>1.24 mb</td>
+				</tr>
+				<tr>
+					<td><a href="" target="_blank">Sözlem</a></td>
+					<td>5.25 mb</td>
+				</tr>
+				<tr>
+					<td><a href="" target="_blank">Sözlem 2</a></td>
+					<td>32.8 mb</td>
+				</tr>
+				<tr>
+					<td><a href="" target="_blank">Sözlem agzalary</a></td>
+					<td>5.09 mb</td>
+				</tr>
+				<tr>
+					<td><a href="" target="_blank">Sözlem agzasy hasaplanmaýan sözlerde oturyň goýluşy</a></td>
+					<td>4.08 mb</td>
+				</tr>
+				<tr>
+					<td><a href="" target="_blank">Sözleriň gurluş taýdan görnüşleri</a></td>
+					<td>4.04 mb</td>
+				</tr>
+				<tr>
+					<td><a href="" target="_blank">Sözsoňy kömekçileri</a></td>
+					<td>4.08 mb</td>
+				</tr>
+				<tr>
+					<td><a href="" target="_blank">Sözsoňy kömekçileriň many toparlary</a></td>
+					<td>4.45 mb</td>
+				</tr>
+				<tr>
+					<td><a href="" target="_blank">Sözüň ortasynda, ahyrynda ýanaşyk gelen çekimsizleriň ýazuw düzgüni</a></td>
+					<td>4.33 mb</td>
+				</tr>
+				<tr>
+					<td><a href="" target="_blank">Stiller</a></td>
+					<td>5.05 mb</td>
+				</tr>
+				<tr>
+					<td><a href="" target="_blank">Sypatlaryň gurluş aýratynlyklary</a></td>
+					<td>4.01 mb</td>
+				</tr>
+				<tr>
+					<td><a href="" target="_blank">Şert bildirýän düzmeli goşma sözlem</a></td>
+					<td>4.39 mb</td>
+				</tr>
+				<tr>
+					<td><a href="https://drive.google.com/file/d/1ebojM7GxcHczQBJWdsBtyQfp_x00VUnp/view?usp=sharing" target="_blank">Şert eýerjeňli goşma sözlem</a></td>
+					<td>4.59 mb</td>
+				</tr>
+				<tr>
+					<td><a href="" target="_blank">Tirkeş deňdeş agzalar</a></td>
+					<td>7.75 mb</td>
+				</tr>
+				<tr>
+					<td><a href="" target="_blank">Wagt eýerjeňli goşma sözlemler</a></td>
+					<td>4.33 mb</td>
+				</tr>
+				<tr>
+					<td><a href="" target="_blank">Ýasama sypat</a></td>
+					<td>4.02 mb</td>
+				</tr>
+				<tr>
+					<td><a href="" target="_blank">Ýaý</a></td>
+					<td>4.99 mb</td>
+				</tr>
+				<tr>
+					<td><a href="" target="_blank">Ýokluk bildirýän düzmeli goşma sözlem</a></td>
+					<td>5.14 mb</td>
+				</tr>
+				<tr>
+					<td><a href="" target="_blank">Ýönekeý sözlemler</a></td>
+					<td>4.89 mb</td>
+				</tr>
+				<tr>
+					<td><a href="" target="_blank">Ýüzlenme belgisi</a></td>
+					<td>4.42 mb</td>
+				</tr>
 				</table>
 		</div>
 		<div id="starcost">&#9733; belgili faýllar töleglidir. Olar hakynda doly maglumat üçin <a href="about.html">FAQ</a></div>
 	</div>
-	<div id="bizsiz">
-		<div class="container">
-		<div class="adbox">
-			Siz hem biziň Telegramdaky kitap klubumyza agza boluň! Siziň üçin gapymyz elmydama açykdyr!
-		</div>
-		<div class="middle">
-	    <div class="text"><a href="https://t.me/tbookworm" target="_blank"><i class="fab fa-telegram"></i></a></div>
-		</div>
-		</div>
-		<div class="container2">
-		<div class="adbox">
-			Biziň mundan başga-da köp sanly birnäçe dillerde kitaplarymyzy okamak isleseňiz!<br>
-			Telegram kanalymyza goşulyň!
-		</div>
-		<div class="middle">
-	    <div class="text"><a href="https://t.me/yaltakitap" target="_blank"><i class="fab fa-telegram"></i></a></div>
-		</div>
-		</div>
-	</div>	
 <!-- footer -->
 	<div id="footer">
 		<div id="futcont">
