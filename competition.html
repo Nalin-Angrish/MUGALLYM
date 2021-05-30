@@ -25,8 +25,8 @@
 	}
 /*scroll down*/
 	::-webkit-scrollbar {width: 10px;}
-	::-webkit-scrollbar-track {background: #f2f2f2; box-shadow: inset 0 0 5px grey;}
-	::-webkit-scrollbar-thumb {background: #4a6882;  height:24%;}
+	::-webkit-scrollbar-track {background: #f2f2f2; box-shadow: inset 0 0 5px grey; border-radius: 12px;}
+	::-webkit-scrollbar-thumb {background: #4a6882;  height:24%; border-radius: 12px;}
 	::-webkit-scrollbar-thumb:hover {background: #2E4052;}
 /*social media buttons */
 	.social-buttons {
@@ -194,46 +194,6 @@
 	.tooltip:hover .tooltiptext {
 	  	visibility: visible;
 	}
-/*tooltip1*/
-	.tooltip1 {
-  		position: relative;
-  		display: inline-block;
-  	
-	}
-	.tooltip1 .tooltiptext1{
-	  	visibility: hidden;
-	  width: 120px;
-	  background-color: #2e4052;
-	  color: #f2f2f2;
-	  text-align: center;
-	  border-radius: 6px;
-	  padding: 5px 0;
-	  font-size:1vw;
-	  font-family:'century gothic';
-	  position: absolute;
-	  z-index: 1;
-	  bottom: 150%;
-	  left: 50%;
-	  margin-left: -60px;
-	}
-	.tooltiptext1 a{
-		color:#f2f2f2;
-	}	
-
-	.tooltip1 .tooltiptext1::after {
-	  content: "";
-	  position: absolute;
-	  top: 100%;
-	  left: 50%;
-	  margin-left: -5px;
-	  border-width: 5px;
-	  border-style: solid;
-	  border-color: black transparent transparent transparent;
-	}
-
-	.tooltip1:hover .tooltiptext1 {
-	  visibility: visible;
-	}
 /*header*/	
 	#navigation-container{
 		position:fixed;
@@ -292,11 +252,11 @@
   		font-size: 1vw;
   		border: none;
   		outline: none;
-  		color: #f2f2f2;
+  		color: #2E4052;
   		padding: 10px 10px;
   		font-family: 'Candara';
   		font-weight: bold;
-  		background-color: #2E4052;}
+  		background-color: #f2f2f2;}
 	.navbar a:hover, .dropdown:hover .dropbtn {
  		background-color:#4a6882;
   		color:#f2f2f2;}	
@@ -320,37 +280,154 @@
 	.dropdown:hover 
 	.dropdown-content {display: block;}
 /*body*/
-	#dersbox{
+	#maincont{
 		position: absolute;
-		top:0;
-		left: 0;
-		height: 10%;
+		left:25%;
+		top:15%;
+		height:60%;
+		width: 50%;
+	}
+	#namecont{
+		display: inline-block;
+		position: relative;
+		height: auto;
+		max-height: 13%;
 		width: auto;
-		color: #2E4052;
-		font:bold 2vw 'candara';
+		bottom: 0;
+		margin:0 auto;
+		margin-bottom: 10px;
+		overflow: hidden;
+		font-size:2.2vw;
+		font-family: 'Candara';
+		font-weight: bold;
+		text-align: center;
 	}
-	#contbox{
-		position: absolute;
-		top:16%;
-		left:15%;
-		height:54%;
-		width: 70%;
+	#cont{
+		display: inline-block;
+		position: relative;
+		height: 85%;
+		bottom: 4%;
+		width: 100%;
+		box-shadow: 0 0 5px 0 inset #2E4052;
+		text-align: center;
+		border-radius: 12px;
 	}
-	#tablebox{
-		position: absolute;
-		bottom:5%;
-		left:0;
-		width:100%;
-		height:70%;
+	#incont{
+		display: inline-block;
+		position: relative;
+		top:4%;
+		height: 92%;
+		width: 96%;
 		overflow: auto;
-		border-bottom:1px solid grey;
-		border-top:1px solid grey;
 	}
-	#searchbox{
-		position: absolute; 
-		width: 100%; 
-		top:12%;
-		height: 10%;
+	#boxx{
+		display: inline-block;
+		position: relative;
+		height: 120px;
+		width: 96%;
+		margin: 6px auto;
+		border-radius: 12px;
+		border: 4px solid #2E4052;
+		box-shadow: 0 0 15px 0 inset #2E4052;
+		color: #2E4052;
+	}
+	#incont :hover a{
+		background-color: #4a6882;
+		color: #f2f2f2;
+	}
+	#incont :hover #compnam1 a{
+		color: gold;
+	}
+	#incont :hover #infcont1{
+		color: gold;
+	}
+	#compnam1 a{
+		color:#2E4052;
+		text-decoration: none;
+	}
+	#compnam1 a{
+		color:#2E4052;
+		text-decoration: none;
+	}
+	#imgb{
+		display: inline-block;
+		position: relative;
+		left: 0;
+		height: 100%;
+		width:auto;
+		border-radius: 12px;
+		border: 1px solid #2E4052;
+		float: left;
+		overflow: hidden;
+		max-width: 30%;
+	}
+	#compnam{
+		display: inline-block;
+		position: relative;
+		margin-left: 18px;
+		margin-top: 20px;
+		width:70%;
+		height: auto;
+		max-height: 50%;
+		font-family: 'candara';
+		font-weight: bold;
+		font-size: 1.8vw;
+		text-align: left;
+		float: left;
+	}
+	#compnam1{
+		display: inline-block;
+		position: relative;
+		margin-left: 18px;
+		margin-top: 20px;
+		width:70%;
+		height: auto;
+		max-height: 50%;
+		font-family: 'candara';
+		font-weight: bold;
+		font-size: 1.8vw;
+		text-align: left;
+		float: left;
+	}
+	#infcont{
+		display: inline-block;
+		position: relative;
+		margin-left: 18px;
+		margin-top: 10px;
+		height: auto;
+		width: auto;
+		max-height:30%;
+		font-size: 0.8vw;
+		text-align: left;
+		font-family: 'Century Gothic';
+		float:left;
+		font-weight: bold;
+	}
+	#infcont1{
+		display: inline-block;
+		position: relative;
+		margin-left: 18px;
+		margin-top: 10px;
+		height: auto;
+		width: auto;
+		max-height:30%;
+		font-size: 0.8vw;
+		text-align: left;
+		font-family: 'Century Gothic';
+		float:left;
+		font-weight: bold;
+	}
+	#backstage{
+		display: inline-block;
+		margin:0 auto;
+		position: absolute;
+		top:4%;
+		left: 25%;
+		height: 92%;
+		width:50%;
+		overflow:;
+		z-index: -1;
+		opacity: 0.09;
 	}
 	#starcost{
 		position: absolute;
@@ -359,73 +436,15 @@
 		height: 5%;
 		width: 100%;
 		color:#2E4052;
-		padding-top: 4px;
+		padding-top: 44px;
 		font:0.8vw candara;	
 	}
-	/*table*/
-		#myInput {
-		  	width: 50%; /* Full-width */
-		  	font-size: 1.2vw; /* Increase font-size */
-		  	color: #2E4052;
-		  	font-family: 'candara';
-		  	background-color: #f2f2f2;
-		  	border:none;
-		  	border-bottom:solid 2px #2E4052;
-		  	}
-		  #myInput :focus{
-		  	border:none;
-		  	border-top:solid 2px #2e4052;
-		  }
-		#myTable {
-			border-collapse: collapse;
-			width: 100%;
-			border: 1px solid grey;
-			font-size: 1.1vw;
-			font-family: 'Century Gothic';
-		}
-		#myTable a{
-			text-decoration: none;
-			color:#2E4052;
-		}
-		#myTable a:hover{
-			color: #f2f2f2;
-		}
-		#myTable th, #myTable td {
-		  	text-align: left;
-		  	padding: 6px;
-		  	padding-left: 12px;
-		}
-		#myTable tr {
-		 	border-bottom: 1px solid grey;
-			color:#2E4052;
-		}
-		#myTable td{
-			border-left: 1px solid grey;
-		}
-		#myTable tr.header{
-		  	background-color: #2E4052;
-		  	color: #f2f2f2;
-
-		}
-		#myTable tr:hover{
-			color: #f2f2f2;
-			background-color: #4a6882;
-		}
-		#myTable tr:hover a{
-			color: #f2f2f2;
-		}
-		#myTable td:hover a{
-			color:#f2f2f2;
-		}
-		#myTable .money:hover a{
-			color:gold;
-		}
-		#myTable .money:hover{
-			color:gold;
-		}
-		#myTable tr.header:hover{
-			background-color: #2E4052;
-		}
+	#starcost a{
+		color: #2E4052;
+	}
+	.makswi{
+		max-width: 24%;
+	}
 /*footer*/
 	#footer{
 		position: absolute;
@@ -490,7 +509,7 @@
 	}
 /*phone*/
 		@media screen and (max-width: 800px){
-			/*header*/
+		/*header*/
 			#navigation-container{
 				height: 14%;
 			}
@@ -558,64 +577,78 @@
 			.dropdown-content a:hover {
 	  			background-color: #4a6882;
 	  			color:#f2f2f2;}
-		/*table*/
-			#contbox{
-				left:4%;
-				width: 92%;
-			}
-			#dersbox{
-				top:3%;
-				color: #2E4052;
-				font:bold 5vw 'candara';
+		/*body*/
+			#maincont{
+				top:17%;
+				width: 98%;
+				left: 1%;
+				height:58%;
+
 			}
 			#starcost{
 				font-size: 2.8vw;
 			}
-			#myInput {
-			  	width: 50%; /* Full-width */
-			  	font-size: 4.2vw; /* Increase font-size */
-			  	color: #2E4052;
-			  	font-family: 'candara';
-			  	background-color: #f2f2f2;
-			  	border:none;
-			  	border-bottom:solid 2px #2E4052;
-			  	}
-			#myInput :focus{
-			  	border:none;
-			  	border-top:solid 2px #2e4052;
+			#namecont{
+				font-size:5vw;
 			}
-			#myTable {
-				border-collapse: collapse;
-				width: 100%;
-				border: 1px solid grey;
-				font-size: 3.1vw;
-				font-family: 'Century Gothic';
+			#cont{
+				margin-top: 7px;
 			}
-			#myTable a{
-				text-decoration: none;
-				color:#2E4052;
+			#boxx{
+				height: 120px;
+				width: 96%;
+				margin: 6px auto;
+				border-radius: 12px;
+				border: 4px solid #2E4052;
 			}
-			#myTable th, #myTable td {
-			  	text-align: left;
-			  	padding: 6px;
-			  	padding-left: 12px;
-			}
-			#myTable tr {
-			 	border-bottom: 1px solid grey;
-				color:#2E4052;
-			}
-			#myTable tr.header{
-			  	background-color: #2E4052;
-			  	color: #f2f2f2;
-			}
-			#myTable tr:hover{
+			#incont :hover a{
 				background-color: #4a6882;
-				color:#F2F2F2;
+				color: #f2f2f2;
 			}
-			#myTable tr.header:hover{
-				background-color: #2E4052;
+			#incont :hover #compnam1{
+				color: gold;
 			}
-			/*footer*/
+			#compnam1 a{
+				color: #2E4052;
+			}
+			#incont :hover #infcont1{
+				color: gold;
+			}
+			#imgb{
+				max-width: 40%;
+			}
+			#compnam{
+				width:50%;
+				font-size: 5vw;
+			}
+			#compnam1{
+				width:50%;
+				font-size: 5vw;
+			}
+			#infcont{
+				font-size: 3vw;
+			}
+			#infcont1{
+				font-size: 3vw;
+				width: 34%;
+				margin-top: 5px;
+			}
+			#backstage{
+				display: inline-block;
+				margin:0 auto;
+				position: absolute;
+				top:4%;
+				left: 25%;
+				height: 92%;
+				width:50%;
+				overflow:;
+				z-index: -1;
+				opacity: 0.09;
+			}
+			.makswi{
+				max-width: 40%;
+			}
+		/*footer*/
 					#footer{
 						position: absolute;
 						bottom:0;
@@ -734,53 +767,177 @@
 	  						<a href="other.html">Beýlekiler</a>
     					</div>
   					</div>
-  					<a href="competition.html">Bäsleşikler</a>
+  					<a href="competition.html" class="active">Bäsleşikler</a>
   					<a href="https://toweregesyn.wordpress.com/" target="_blank">Töwerege Syn</a>
 				</div>
 			</div>
 		</div>		
 	</div>
 <!-- body-->
-	<div id="contbox">
-		<div id="dersbox">Başga-da ....</div>
-		<div id="searchbox">
-		<input type="text" id="myInput" onkeyup="tablefunction()" placeholder="Gözle..." title="Kitabyň adyny ýaz!">
+	<div id="maincont">
+		<div id="namecont">BÄSLEŞIKLER</div>
+		<div id="cont">
+			<div id="incont">
+				<div id="boxx">
+					<div id="imgb" class="makswi"><img src="i/extra/quiz.jpg" height="100%" width="100%"></div>
+					<div id="compnam1"><a href="https://drive.google.com/file/d/1KiuvpYPOs95gX1JctC8y4uSJk8dxDQ2I/view?usp=sharing" target="_blank">1/25 Bäsleşigi</a> &nbsp;&nbsp;&nbsp; &#9733;</div>
+					<div id="infcont1">Göwrümi: 2.59 mb | Belgisi: BK01 | Bahasy: 8TMT</div>
+				</div>
+				<div id="boxx">
+					<div id="imgb" class="makswi"><img src="i/extra/poet.jpg" height="100%" width="100%"></div>
+					<div id="compnam"><a href="https://drive.google.com/file/d/1nu62_3f-xKJvhi6ETL4siV01RRXET9kd/view?usp=sharing" target="_blank"><a href="" target="_blank">XX asyr şahyr ýazyjylary tana</a></div>
+					<div id="infcont">Göwrümi: 3.27 mb</div>
+				</div>
+				<div id="boxx">
+					<div id="imgb"><img src="i/extra/tv.jpg" height="100%"></div>
+					<div id="compnam"><a href="https://drive.google.com/file/d/1h0ke_C7jiEQvqRQ2S7CBm90RagLXF6uc/view?usp=sharing" target="_blank"><a href="" target="_blank">Animals on TV</a></div>
+					<div id="infcont">Göwrümi: 0.30 mb</div>
+				</div>
+				<div id="boxx">
+					<div id="imgb"><img src="i/extra/bathroom.jpg" height="100%"></div>
+					<div id="compnam"><a href="https://drive.google.com/file/d/1VotKQiO7osN-FIOErJLUclFLjEqa5vFS/view?usp=sharing" target="_blank"><a href="" target="_blank">Bathroom game</a></div>
+					<div id="infcont">Göwrümi: 0.42 mb</div>
+				</div>
+				<div id="boxx">
+					<div id="imgb"><img src="i/extra/bee.jpg" height="100%"></div>
+					<div id="compnam"><a href="https://drive.google.com/file/d/1l26PQzYJqDKhmy6W5T1MlLDMJlHn31_S/view?usp=sharing" target="_blank"><a href="" target="_blank">Busy Bee Game</a></div>
+					<div id="infcont">Göwrümi: 0.75 mb</div>
+				</div>
+				<div id="boxx">
+					<div id="imgb" class="makswi"><img src="i/extra/yol.jpg" height="100%" width="100%"></div>
+					<div id="compnam"><a href="https://drive.google.com/file/d/1Igsb-SD9qB7WNwrk0T3zHhywa3STO21h/view?usp=sharing" target="_blank"><a href="" target="_blank">Çylşyrymly ýol</a></div>
+					<div id="infcont">Göwrümi: 0.76 mb</div>
+				</div>
+				<div id="boxx">
+					<div id="imgb"><img src="i/extra/funnyanimals.jpg" height="100%"></div>
+					<div id="compnam"><a href="https://drive.google.com/file/d/1sFctskqldEpy6tWA7xd8eAe_xnf0_CrG/view?usp=sharing" target="_blank">Funny Animals</a></div>
+					<div id="infcont">Göwrümi: 0.67 mb</div>
+				</div>
+				<div id="boxx">
+					<div id="imgb" class="makswi"><img src="i/extra/hiddenpics.jpg" height="100%" width="100%"></div>
+					<div id="compnam"><a href="https://drive.google.com/file/d/1w3vQKVCJaThxvTjGzSaLgf1izuGL-nAJ/view?usp=sharing" target="_blank">Gizlenen Suratlar</a></div>
+					<div id="infcont">Göwrümi: 29.5 mb</div>
+				</div>
+				<div id="boxx">
+					<div id="imgb"><img src="i/extra/korperteile.jpg" height="100%"></div>
+					<div id="compnam"><a href="https://drive.google.com/file/d/1DWxIbZjo5-RLNIPt5rlgo2ZdvL8aM1Ml/view?usp=sharing" target="_blank"><a href="" target="_blank">Körperteile</a></div>
+					<div id="infcstyle="max-width: 24%"ont">Göwrümi: 0.64 mb</div>
+				</div>
+				<div id="boxx">
+					<div id="imgb"><img src="i/extra/bliard1.jpg" height="100%"></div>
+					<div id="compnam"><a href="https://drive.google.com/file/d/1xDQeOcN8AUxE2-td658guyHBcrz_SLP2/view?usp=sharing" target="_blank">Number Strike 1-10</a></div>
+					<div id="infcont">Göwrümi: 0.44 mb</div>
+				</div>
+				<div id="boxx">
+					<div id="imgb"><img src="i/extra/bliard2.jpg" height="100%"></div>
+					<div id="compnam"><a href="https://drive.google.com/file/d/1QmuuVaj6eUNM5K89togF2cBpvpI13GUe/view?usp=sharing" target="_blank">Number Strike 11-20</a></div>
+					<div id="infcont">Göwrümi: 0.47 mb</div>
+				</div>
+				<div id="boxx">
+					<div id="imgb"><img src="i/extra/Occupations.jpg" height="100%"></div>
+					<div id="compnam"><a href="https://drive.google.com/file/d/1_pP2LMS5C0Sf39d3gK2RmIpQajUalL4w/view?usp=sharing" target="_blank">Occupations</a></div>
+					<div id="infcont">Göwrümi: 0.43 mb</div>
+				</div>
+				<div id="boxx">
+					<div id="imgb"><img src="i/extra/Occupationstv.jpg" height="100%"></div>
+					<div id="compnam"><a href="https://drive.google.com/file/d/1gpo_SWNOBtVD7OJ3fzcRA_R0xbu0Fg8f/view?usp=sharing" target="_blank">Occupations on tv</a></div>
+					<div id="infcont">Göwrümi: 0.30 mb</div>
+				</div>
+				<div id="boxx">
+					<div id="imgb"><img src="i/extra/articles.jpg" height="100%"></div>
+					<div id="compnam"><a href="https://drive.google.com/file/d/1PzXUIfgy8TtFdestdy1Ed6RrPwU-tN49/view?usp=sharing" target="_blank">Occupations & the articles</a></div>
+					<div id="infcont">Göwrümi: 0.37 mb</div>
+				</div>
+				<div id="boxx">
+					<div id="imgb"><img src="i/extra/road.jpg" height="100%"></div>
+					<div id="compnam"><a href="https://drive.google.com/file/d/1sGK-VVS5cMwlHbdEYy3UgOxWmB9xtGdt/view?usp=sharing" target="_blank">On the road again</a></div>
+					<div id="infcont">Göwrümi: 0.69 mb</div>
+				</div>
+				<div id="boxx">
+					<div id="imgb" class="makswi"><img src="i/extra/ceper.jpg" height="100%" width="100%"></div>
+					<div id="compnam"><a href="https://drive.google.com/file/d/10Apze5OxrRoY0QocW3Wrl8F_CauCllVh/view?usp=sharing" target="_blank">Sen Köp Çeper Eser Okadyňmy?</a></div>
+					<div id="infcont">Göwrümi: 4.57 mb</div>
+				</div>
+				<div id="boxx">
+					<div id="imgb"><img src="i/extra/ttoys.jpg" height="100%"></div>
+					<div id="compnam"><a href="https://drive.google.com/file/d/1sGK-VVS5cMwlHbdEYy3UgOxWmB9xtGdt/view?usp=sharing" target="_blank">Spielzeuge</a></div>
+					<div id="infcont">Göwrümi: 0.69 mb</div>
+				</div>
+				<div id="boxx">
+					<div id="imgb"><img src="i/extra/sports and hobbies.jpg" height="100%"></div>
+					<div id="compnam"><a href="https://drive.google.com/file/d/1DbuenDG7fW1pEbCvNXf6XQBeeXLhgZsB/view?usp=sharing" target="_blank">Sports and Hobbies</a></div>
+					<div id="infcont">Göwrümi: 0.48 mb</div>
+				</div>	
+				<div id="boxx">
+					<div id="imgb"><img src="i/extra/ssport.jpg" height="100%"></div>
+					<div id="compnam"><a href="https://drive.google.com/file/d/1fVOftWaim-ITlPFaFrsdw3Nd8UbDyKuh/view?usp=sharing" target="_blank">Sports Game</a></div>
+					<div id="infcont">Göwrümi: 0.37 mb</div>
+				</div>	
+				<div id="boxx">
+					<div id="imgb"><img src="i/extra/spell.jpg" height="100%"></div>
+					<div id="compnam"><a href="https://drive.google.com/file/d/14tUvWKgqyW1j2iZT_sD9e_V3eqH2v1BT/view?usp=sharing" target="_blank">Sports spelling</a></div>
+					<div id="infcont">Göwrümi: 0.67 mb</div>
+				</div>
+				<div id="boxx">
+					<div id="imgb"><img src="i/extra/ssport.jpg" height="100%"></div>
+					<div id="compnam"><a href="https://drive.google.com/file/d/1fNxxF-aKHMTB6EIyrf20TU3RnwdVCpAg/view?usp=sharing" target="_blank">Sportsspiele</a></div>
+					<div id="infcont">Göwrümi: 0.54 mb</div>
+				</div>
+				<div id="boxx">
+					<div id="imgb"><img src="i/extra/super.jpg" height="100%"></div>
+					<div id="compnam"><a href="https://drive.google.com/file/d/1ET4VO-icZtYPIPXv8hEKQk2zwW7ecFzg/view?usp=sharing" target="_blank">Superlatives</a></div>
+					<div id="infcont">Göwrümi: 0.51 mb</div>
+				</div>
+				<div id="boxx">
+					<div id="imgb"><img src="i/extra/superlatives.jpg" height="100%"></div>
+					<div id="compnam"><a href="https://drive.google.com/file/d/15E_BSntMNHfm7gTw5ixyoRmEbudLPex9/view?usp=sharing" target="_blank">Superlatives 2</a></div>
+					<div id="infcont">Göwrümi: 0.45 mb</div>
+				</div>
+				<div id="boxx">
+					<div id="imgb"><img src="i/extra/time.jpg" height="100%"></div>
+					<div id="compnam"><a href="https://drive.google.com/file/d/1jTCkm2iFOYK5UNMHS0rnZoeqIOaZZi_6/view?usp=sharing" target="_blank">The Time</a></div>
+					<div id="infcont">Göwrümi: 0.45 mb</div>
+				</div>
+				<div id="boxx">
+					<div id="imgb"><img src="i/extra/Wettbewerb.jpg" height="100%"></div>
+					<div id="compnam1"><a href="https://drive.google.com/file/d/1E034XwJOYaAFGUu3SXyG9g4UoFccmccQ/view?usp=sharing" target="_blank">Wettbewerb &nbsp;&nbsp;&nbsp; &#9733;</a></div>
+					<div id="infcont1">Göwrümi: 2.54 mb | Belgisi: BK02 | Bahasy: 8TMT</div>
+				</div>
+				<div id="boxx">
+					<div id="imgb"><img src="i/extra/doing.jpg" height="100%"></div>
+					<div id="compnam"><a href="https://drive.google.com/file/d/1Da8tow4V6F4XJEjOehKxtlCH4S3xzcmp/view?usp=sharing" target="_blank">What are they doing?</a></div>
+					<div id="infcont">Göwrümi: 0.70 mb</div>
+				</div>
+				<div id="boxx">
+					<div id="imgb"><img src="i/extra/can.jpg" height="100%"></div>
+					<div id="compnam"><a href="https://drive.google.com/file/d/1WbdJFS7JNenbkGqxukl3Le_2Jocc2DUW/view?usp=sharing" target="_blank">What Can They Do?</a></div>
+					<div id="infcont">Göwrümi: 0.50 mb</div>
+				</div>
+				<div id="boxx">
+					<div id="imgb"><img src="i/extra/can2.jpg" height="100%"></div>
+					<div id="compnam"><a href="https://drive.google.com/file/d/1XZlmMIMY0JFapLl53G4QOA_kXB_WCk4R/view?usp=sharing" target="_blank">What Can They Do? 2</a></div>
+					<div id="infcont">Göwrümi: 0.72 mb</div>
+				</div>
+				<div id="boxx">
+					<div id="imgb"><img src="i/extra/time2.jpg" height="100%"></div>
+					<div id="compnam"><a href="https://drive.google.com/file/d/1cYP7zL2owd2Cad5ZBrcKpGSR0OFBiwa9/view?usp=sharing" target="_blank">What Time Is It?</a></div>
+					<div id="infcont">Göwrümi: 0.32 mb</div>
+				</div>
+				<div id="boxx">
+					<div id="imgb"><img src="i/extra/Millionaire.jpg" height="100%"></div>
+					<div id="compnam"><a href="https://drive.google.com/file/d/1p1uVJXZyUrhFGrNuwxNVG7SDc__sfp0W/view?usp=sharing" target="_blank">Who Wants To Be A Millionaire</a></div>
+					<div id="infcont">Göwrümi: 2.46 mb</div>
+				</div>
+				<div id="boxx">
+					<div id="imgb" class="makswi"><img src="i/extra/yedigen.jpg" height="100%" width="100%"></div>
+					<div id="compnam1"><a href="https://drive.google.com/file/d/1E034XwJOYaAFGUu3SXyG9g4UoFccmccQ/view?usp=sharing" target="_blank">Ýedigenim Ýedi Ýyldyz &nbsp;&nbsp;&nbsp; &#9733;</a></div>
+					<div id="infcont1">Göwrümi: 2.04 mb | Belgisi: BK03 | Bahasy:5TMT</div>
+				</div>
+
+			</div>	
 		</div>
-		<div id="tablebox">
-			<table id="myTable">
-				<tr class="header">
-					<th style="width:80%;">Faýlyň ady</th>
-				    <th style="width:20%;">Göwrümi</th>
-				</tr>
-				<tr>
-					<td><a href="https://drive.google.com/file/d/1dSq3FzRfbC_4yNtq3CdLcqj56HnRqAkU/view?usp=sharing" target="_blank">Biziň taryhymyz</a></td>
-					<td>3.86 mb</td>
-				</tr>
-				<tr>
-					<td><a href="https://drive.google.com/file/d/1IWNgTe3pHlk1FtVAOsY1ovRR_-EbrGP-/view?usp=sharing" target="_blank">Donorlyk</a></td>
-					<td>0.36 mb</td>
-				</tr>
-				<tr class="money">
-				    <td><a href="https://drive.google.com/file/d/1Bqhu2SMV5BuktuIf-RqxwRlxrrARG-M8/view?usp=sharing" target="_blank">Edebiýatdan düzmeler&nbsp;&nbsp;&nbsp;</a><div class="tooltip1">&#9733; <span class="tooltiptext1">Bahasy: 15TMT<br>Belgisi: BE01<br><a href="https://drive.google.com/file/d/1R4PjJzwFCn0MwwOyz7zYg2-MlUZu6pKo/view?usp=sharing" target="_blank">Gysgaça</a></span> </div></td>
-				    <td>0.50 mb</td>
-				</tr>
-				<tr>
-					<td><a href="https://drive.google.com/file/d/1IWNgTe3pHlk1FtVAOsY1ovRR_-EbrGP-/view?usp=sharing" target="_blank">Oguzhan</a></td>
-					<td>3.15 mb</td>
-				</tr>
-				<tr class="money">
-				    <td><a href="https://drive.google.com/file/d/18hwbVZx1XGLstG_Qel7dlE8IQ5hzGwR8/view?usp=sharing" target="_blank">Matematikadan Gollama (6-11 synp)&nbsp;&nbsp;&nbsp;</a><div class="tooltip1">&#9733; <span class="tooltiptext1">Bahasy: 15TMT<br>Belgisi: BE02<br><a href="https://drive.google.com/file/d/1v17nOkLCxqx5UTf4Sl64_RoieODjwSJD/view?usp=sharing" target="_blank">Gysgaça</a></span> </div></td>
-				    <td>37.5 mb</td>
-				</tr>
-				<tr>
-					<td><a href="https://drive.google.com/file/d/1fcf0bCn_3hcQEtOBib32URtQH9tom3fX/view?usp=sharing" target="_blank">Sinhaý rewolýusiýasy</a></td>
-					<td>3.86 mb</td>
-				</tr>
-				<tr class="money">
-				    <td><a href="https://drive.google.com/file/d/1kfblDdiFH8LParLcggu784_c_CglVPBs/view?usp=sharing" target="_blank">Ynsanperwer Uniwersiteti - iňlis dili soragnama we jogaplary (2017)&nbsp;&nbsp;&nbsp;</a><div class="tooltip1">&#9733; <span class="tooltiptext1">Bahasy: 8TMT<br>Belgisi: BE03<br><a href="https://drive.google.com/file/d/1EgbnTXDmm4059iVzdm2TmHN6de4kPTxT/view?usp=sharing" target="_blank">Gysgaça</a></span> </div></td>
-				    <td>0.39 mb</td>
-				</tr>																
-				</table>
+		<div id="backstage">
+			<img src="i/2page.png" height="100%">
 		</div>
 		<div id="starcost">&#9733; belgili faýllar töleglidir. Olar hakynda doly maglumat üçin <a href="about.html">FAQ</a></div>
 	</div>
@@ -806,7 +963,7 @@
 					<a href="literature.html"><button class="button1"><span>Edebiýat</span></button></a> &nbsp; &nbsp;<br>
 					<a href="german.html"><button class="button1"><span>Nemes dili</span></button></a> &nbsp; &nbsp;<br>
 			</div>			
-			<div id="ltextcont" class="firstrow" style="left:40%;>
+			<div id="ltextcont" class="firstrow" style="left:40%;">
 					<a href="books.html"><button class="button1"><span>Kitaphana</span></button></a> &nbsp; &nbsp;<br>
 					<a href="competition.html"><button class="button1"><span>Bäsleşikler</span></button></a> &nbsp; &nbsp;<br>
 					<a href="english.html"><button class="button1"><span>Iňlis dili</span></button></a> &nbsp; &nbsp;<br>
@@ -838,24 +995,5 @@
   		document.getElementById("myDiv").style.display = "block";
 	}
 
-	function tablefunction() {
-  		var input, filter, table, tr, td, i, txtValue;
-	  		input = document.getElementById("myInput");
-	  		filter = input.value.toUpperCase();
-	  		table = document.getElementById("myTable");
-	  		tr = table.getElementsByTagName("tr");
-  		for (i = 0; i < tr.length; i++) {
-    		td = tr[i].getElementsByTagName("td")[0];
-	    	if (td) {
-		      	txtValue = td.textContent || td.innerText;
-		      	if (txtValue.toUpperCase().indexOf(filter) > -1) {
-		        	tr[i].style.display = "";
-		      	} 
-		      	else {
-		        	tr[i].style.display = "none";
-		      	}
-		    }       
-  		}
-	}
 </script>
 </html>
